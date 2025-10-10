@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "../Home/UI/Button";
+import { FilterButtons } from "../../../Data/Array";
+import FeaturedCoursesCategories from "./FeaturedCoursesCategories";
 
 export default function FeaturedCourses() {
   return (
+    <div>
     <div className="md:flex justify-between items-center space-x-4 mb-8 p-5">
       <div className="max-w-7xl  py-12 px-4">
         {/* Title and Subtitle */}
@@ -17,27 +20,21 @@ export default function FeaturedCourses() {
       </div>
       {/* Filter Buttons */}
       <div>
-      <div className="flex justify-center space-x-4 mb-8">
-        <Button
-          text="Most Popular"
-          variant="square"
-          size="sm"
-          onClick={() => console.log("Most Popular clicked")}
-        />
-        <Button
-          text="New & Trending"
-          variant="squareOutline"
-          size="sm"
-          onClick={() => console.log("New & Trending clicked")}
-        />
-        <Button
-          text="Career Paths"
-          variant="squareOutline"
-          size="sm"
-          onClick={() => console.log("Career Paths clicked")}
-        />
+        <div className="flex justify-center space-x-4 mb-8">
+          {FilterButtons.map((button) => (
+            <Button
+              key={button.id}
+              text={button.text}
+              variant={button.variant}
+              size="sm"
+              onClick={button.onClick}
+            />
+          ))}
+        </div>
       </div>
-      </div>
+      
+    </div>
+    <FeaturedCoursesCategories />
     </div>
   );
 }

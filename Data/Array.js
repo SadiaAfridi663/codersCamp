@@ -11,10 +11,32 @@ export const recommendations = [
   { id: 2, title: "Data Science",  icon: "fas fa-chart-bar",},
   { id: 3,title: "UI/UX Design",  icon: "fas fa-palette",},
 ];
-
-
-
-
+export const popularCourses = [
+  { id: 1, title: "JavaScript for Beginners", desc: "Learn the basics of JavaScript, the most popular programming language in web development.",icon: "fas fa-code", instructor: "John Doe", },
+  { id: 2, title: "Data Science with Python", desc: "Master data analysis, visualization, and machine learning using Python.", icon: "fas fa-chart-bar", instructor: "Jane Smith", },
+  { id: 3, title: "UI/UX Design Fundamentals", desc: "Design beautiful and user-friendly digital experiences.", icon: "fas fa-palette", instructor: "Emily Johnson", },
+  { id: 4, title: "Machine Learning A-Z", desc: "A comprehensive guide to machine learning algorithms and techniques.", icon: "fas fa-robot", instructor: "Michael Brown", },
+];
+export const FilterButtons = [
+  { 
+    id: 'popular', 
+    text: 'Most Popular', 
+    variant: 'square',
+    onClick: () => console.log("Most Popular clicked")
+  },
+  { 
+    id: 'trending', 
+    text: 'New & Trending', 
+    variant: 'squareOutline',
+    onClick: () => console.log("New & Trending clicked")
+  },
+  { 
+    id: 'career', 
+    text: 'Career Paths', 
+    variant: 'squareOutline',
+    onClick: () => console.log("Career Paths clicked")
+  }
+];
 // src/Data/Array.js (or wherever you keep it)
 import { FaCode, FaChartBar, FaPalette, FaRobot, FaMobileAlt, FaServer, FaDatabase, FaCloud, FaShieldAlt, FaBullhorn, FaBriefcase, FaPython } from "react-icons/fa";
 

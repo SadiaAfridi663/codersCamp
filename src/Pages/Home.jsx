@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeHero from "../Component/Home/HomeHero"
 import FeaturedCourses from '../Component/Home/FeaturedCourses'
+import Categories from '../Component/Home/Categories/Categories'
 
 
 export default function Home() {
@@ -11,7 +12,7 @@ export default function Home() {
       SubTitle="Join thousands of learners building their future with our expert-led courses."
       heroimage="../assets/hero.avif"/>
       <FeaturedCourses />
-    
+    <Categories/>
     </div>
   )
 }
