@@ -1,8 +1,9 @@
 import React from "react";
 import Button from "../UI/Button";
 import CategoriesCards from "./CategoriesCards";
-import CategoriesArray from "../../../../Data/Array";
+import {CategoriesArray} from "../../../../Data/Array";
 import CustomSlider from "../UI/Slider";
+
 
 export default function Categories({ Categoriestitle, CategoriesSubtitle }) {
   return (

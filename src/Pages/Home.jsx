@@ -1,6 +1,7 @@
 import React from 'react'
 import HomeHero from "../Component/Home/HomeHero"
 import Categories from '../Component/Home/Categories/Categories'  
+import WhyChooseUs from '../Component/Home/WhyChoseUs'
 
 
 
@@ -17,6 +18,8 @@ export default function Home() {
        Categoriestitle="Explore Learning Paths"
        CategoriesSubtitle="Discover your perfect learning journey with our curated categories."
      />
+
+     <WhyChooseUs  />
  
     </div>
   )

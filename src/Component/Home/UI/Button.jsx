@@ -2,27 +2,26 @@ import React from "react";
 
 export default function Button({
   text = "Click Me",
-  icon = "",
+  icon = null,
   variant = "primary",
-  size = "md", // 👈 new size prop
+  size = "md",
   onClick,
   className = "",
 }) {
   const baseStyle =
     "rounded-full font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center gap-3";
 
-  // Variant styles
   const variants = {
     primary: "bg-primary hover:bg-primary-dark text-white",
-    outline: "bg-white hover:bg-gray-50 text-primary border-2 border-primary",
-    
+    outline:
+      "bg-white hover:bg-gray-50 text-primary border-2 border-primary",
+    link: "flex items-center gap-2 text-[#3baee9] hover:text-primary-dark font-semibold text-sm transition-colors duration-300 shadow-none hover:shadow-none bg-transparent",
   };
 
-  // Size styles
   const sizes = {
-    sm: "text-sm px-4 py-2", 
-    md: "text-base px-6 py-3", 
-    lg: "text-lg px-8 py-4", 
+    sm: "text-sm px-4 py-2",
+    md: "text-base px-6 py-3",
+    lg: "text-lg px-8 py-4",
   };
 
   return (
@@ -30,8 +29,8 @@ export default function Button({
       onClick={onClick}
       className={`${baseStyle} ${variants[variant]} ${sizes[size]} ${className}`}
     >
-      {icon && <i className={icon}></i>}
       {text}
+      {icon && <span>{icon}</span>}
     </button>
   );
 }
