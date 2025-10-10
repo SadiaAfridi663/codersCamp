@@ -15,6 +15,7 @@ export default function Button({
   const variants = {
     primary: "bg-primary hover:bg-primary-dark text-white",
     outline: "bg-white hover:bg-gray-50 text-primary border-2 border-primary",
+    
   };
 
   // Size styles

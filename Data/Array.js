@@ -11,3 +11,111 @@ export const recommendations = [
   { id: 2, title: "Data Science",  icon: "fas fa-chart-bar",},
   { id: 3,title: "UI/UX Design",  icon: "fas fa-palette",},
 ];
+
+
+
+
+// src/Data/Array.js (or wherever you keep it)
+import { FaCode, FaChartBar, FaPalette, FaRobot, FaMobileAlt, FaServer, FaDatabase, FaCloud, FaShieldAlt, FaBullhorn, FaBriefcase, FaPython } from "react-icons/fa";
+
+const CategoriesArray = [
+  {
+    id: 1,
+    title: "Web Development",
+    desc: "Build modern, responsive websites and web apps.",
+    count: 24,
+    icon: FaCode,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 2,
+    title: "Data Science",
+    desc: "Learn data visualization, analysis, and machine learning.",
+    count: 18,
+    icon: FaChartBar,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 3,
+    title: "UI/UX Design",
+    desc: "Design beautiful and user-friendly digital experiences.",
+    count: 15,
+    icon: FaPalette,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 4,
+    title: "AI & Machine Learning",
+    desc: "Master deep learning, neural networks, and automation.",
+    count: 12,
+    icon: FaRobot,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 5,
+    title: "Mobile App Development",
+    desc: "Create mobile apps with Flutter, React Native, or Kotlin.",
+    count: 14,
+    icon: FaMobileAlt,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 6,
+    title: "Backend Development",
+    desc: "Learn APIs, Node.js, and build scalable server-side apps.",
+    count: 10,
+    icon: FaServer,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 7,
+    title: "Database Management",
+    desc: "Master SQL, MongoDB, and data architecture.",
+    count: 9,
+    icon: FaDatabase,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 8,
+    title: "Cloud Computing",
+    desc: "Deploy apps using AWS, Azure, and Google Cloud.",
+    count: 11,
+    icon: FaCloud,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 9,
+    title: "Cybersecurity",
+    desc: "Protect systems, networks, and data from cyber threats.",
+    count: 8,
+    icon: FaShieldAlt,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 10,
+    title: "Digital Marketing",
+    desc: "Learn SEO, social media, and brand promotion strategies.",
+    count: 16,
+    icon: FaBullhorn,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 11,
+    title: "Business & Freelancing",
+    desc: "Develop entrepreneurial and freelancing skills.",
+    count: 13,
+    icon: FaBriefcase,
+    color: "from-blue-500 to-cyan-500",
+  },
+  {
+    id: 12,
+    title: "Python Programming",
+    desc: "Start coding with Python — beginner to advanced projects.",
+    count: 20,
+    icon: FaPython,
+    color: "from-blue-500 to-cyan-500",
+  },
+];
+
+export default CategoriesArray;
+

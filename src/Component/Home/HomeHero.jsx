@@ -8,7 +8,7 @@ const HeroSection = ({ title, SubTitle,}) => {
  
   return (
     <section
-      className="relative flex items-center justify-around overflow-hidden px-10 bg-cover bg-center bg-no-repeat"
+      className="relative flex items-center justify-around overflow-hidden px-10 pb-10 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroimage})` }}
     >
       {/* Overlay */}

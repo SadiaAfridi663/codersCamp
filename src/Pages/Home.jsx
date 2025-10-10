@@ -1,5 +1,7 @@
 import React from 'react'
 import HomeHero from "../Component/Home/HomeHero"
+import Categories from '../Component/Home/Categories/Categories'  
+
 
 
 export default function Home() {
@@ -9,12 +11,13 @@ export default function Home() {
       title="<span class='text-white'>Learn</span><span class='text-white'>,</span> <span class='text-primary'>Anything</span><span class='text-white'>,</span> <span class='text-primary'>AnyTime</span><span class='text-white'>,</span> <span class='text-primary'>AnyWhere</span>"
       SubTitle="Join thousands of learners building their future with our expert-led courses."
       heroimage="../assets/hero.avif"
-
-     
-
-
       />
-    
+
+     <Categories
+       Categoriestitle="Explore Learning Paths"
+       CategoriesSubtitle="Discover your perfect learning journey with our curated categories."
+     />
+ 
     </div>
   )
 }
