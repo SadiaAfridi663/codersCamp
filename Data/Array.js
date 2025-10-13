@@ -6,27 +6,39 @@ export const Right = [
   { id: 5, Level: "+", color: "bg-primary/20 text-gray-700" },
 ];
 
-export const recommendations = [
-  { id: 1, title: "Web Development", icon: "fas fa-code" },
-  { id: 2, title: "Data Science", icon: "fas fa-chart-bar" },
-  { id: 3, title: "UI/UX Design", icon: "fas fa-palette" },
+export const recommendations = [ 
+  { id: 1, title: "Web Development",  icon: "fas fa-code",},
+  { id: 2, title: "Data Science",  icon: "fas fa-chart-bar",},
+  { id: 3,title: "UI/UX Design",  icon: "fas fa-palette",},
 ];
-
+export const popularCourses = [
+  { id: 1, title: "JavaScript for Beginners", desc: "Learn the basics of JavaScript, the most popular programming language in web development.",icon: "fas fa-code", instructor: "John Doe", },
+  { id: 2, title: "Data Science with Python", desc: "Master data analysis, visualization, and machine learning using Python.", icon: "fas fa-chart-bar", instructor: "Jane Smith", },
+  { id: 3, title: "UI/UX Design Fundamentals", desc: "Design beautiful and user-friendly digital experiences.", icon: "fas fa-palette", instructor: "Emily Johnson", },
+  { id: 4, title: "Machine Learning A-Z", desc: "A comprehensive guide to machine learning algorithms and techniques.", icon: "fas fa-robot", instructor: "Michael Brown", },
+];
+export const FilterButtons = [
+  { 
+    id: 'popular', 
+    text: 'Most Popular', 
+    variant: 'square',
+    onClick: () => console.log("Most Popular clicked")
+  },
+  { 
+    id: 'trending', 
+    text: 'New & Trending', 
+    variant: 'squareOutline',
+    onClick: () => console.log("New & Trending clicked")
+  },
+  { 
+    id: 'career', 
+    text: 'Career Paths', 
+    variant: 'squareOutline',
+    onClick: () => console.log("Career Paths clicked")
+  }
+];
 // src/Data/Array.js (or wherever you keep it)
-import {
-  FaCode,
-  FaChartBar,
-  FaPalette,
-  FaRobot,
-  FaMobileAlt,
-  FaServer,
-  FaDatabase,
-  FaCloud,
-  FaShieldAlt,
-  FaBullhorn,
-  FaBriefcase,
-  FaPython,
-} from "react-icons/fa";
+import { FaCode, FaChartBar, FaPalette, FaRobot, FaMobileAlt, FaServer, FaDatabase, FaCloud, FaShieldAlt, FaBullhorn, FaBriefcase, FaPython } from "react-icons/fa";
 
 export const CategoriesArray = [
   {
@@ -127,6 +139,10 @@ export const CategoriesArray = [
   },
 ];
 
+
+
+
+
 import {
   FaUserGraduate,
   FaInfinity,
@@ -135,34 +151,35 @@ import {
   FaLaptop,
 } from "react-icons/fa";
 export const features = [
-  {
-    icon: FaUserGraduate,
-    title: "Learn from Experts",
-    desc: "Gain knowledge from industry professionals with years of real-world experience.",
-    gradient: "from-[#3baee9] to-[#2a9fd8]",
-  },
-  {
-    icon: FaInfinity,
-    title: "Lifetime Access",
-    desc: "Access all your courses anytime, anywhere with no expiry limit.",
-    gradient: "from-[#3baee9] to-[#2a9fd8]",
-  },
-  {
-    icon: FaDollarSign,
-    title: "Affordable Pricing",
-    desc: "Get high-quality learning without breaking the bank.",
-    gradient: "from-[#3baee9] to-[#2a9fd8]",
-  },
-  {
-    icon: FaCertificate,
-    title: "Certificate of Completion",
-    desc: "Receive a professional certificate to showcase your skills.",
-    gradient: "from-[#3baee9] to-[#2a9fd8]",
-  },
-  {
-    icon: FaLaptop,
-    title: "Flexible Online Learning",
-    desc: "Learn at your own pace with interactive, online classes.",
-    gradient: "from-[#3baee9] to-[#2a9fd8]",
-  },
-];
+    {
+      icon: FaUserGraduate ,
+      title: "Learn from Experts",
+      desc: "Gain knowledge from industry professionals with years of real-world experience.",
+      gradient: "from-[#3baee9] to-[#2a9fd8]",
+    },
+    {
+      icon: FaInfinity ,
+      title: "Lifetime Access",
+      desc: "Access all your courses anytime, anywhere with no expiry limit.",
+      gradient: "from-[#3baee9] to-[#2a9fd8]",
+    },
+    {
+      icon: FaDollarSign ,
+      title: "Affordable Pricing",
+      desc: "Get high-quality learning without breaking the bank.",
+      gradient: "from-[#3baee9] to-[#2a9fd8]",
+    },
+    {
+      icon: FaCertificate ,
+      title: "Certificate of Completion",
+      desc: "Receive a professional certificate to showcase your skills.",
+      gradient: "from-[#3baee9] to-[#2a9fd8]",
+    },
+    {
+      icon: FaLaptop ,
+      title: "Flexible Online Learning",
+      desc: "Learn at your own pace with interactive, online classes.",
+      gradient: "from-[#3baee9] to-[#2a9fd8]",
+    },
+  ];
+  export default features;
