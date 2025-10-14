@@ -15,6 +15,9 @@ export default function Button({
     primary: "bg-primary hover:bg-primary-dark text-white",
     outline:
       "bg-white hover:bg-gray-50 text-primary border-2 border-primary",
+      square: "bg-primary hover:bg-primary-dark text-white rounded-md",
+  squareOutline:
+    "bg-white hover:bg-gray-50 text-primary border-2 border-primary rounded-md",
     link: "flex items-center gap-2 text-[#3baee9] hover:text-primary-dark font-semibold text-sm transition-colors duration-300 shadow-none hover:shadow-none bg-transparent",
   };
 
