@@ -20,8 +20,8 @@ export default function Input({
           value={value}
           onChange={onChange}
           className="w-full px-6 py-4 pl-14 rounded-full border border-gray-300 shadow-lg 
-                     focus:outline-none focus:ring-4 focus:ring-primary/20 
-                     focus:border-primary text-lg transition-all duration-300 text-white bg-transparent"
+         focus:outline-none focus:ring-4 focus:ring-primary/20 
+         focus:border-primary text-lg transition-all duration-300 text-white bg-transparent"
         />
 
         {/* Icon */}
@@ -34,7 +34,7 @@ export default function Input({
             size="md"
             onClick={onClick}
             className="absolute right-2 top-1/2 transform -translate-y-1/2  transition-colors duration-300"
-          /> 
+          />
         )}
       </div>
     </div>

@@ -3,6 +3,10 @@ import HomeHero from "../Component/Home/HomeHero"
 import Categories from '../Component/Home/Categories/Categories'  
 import WhyChooseUs from '../Component/Home/WhyChoseUs'
 import FeaturedCourses from '../Component/Home/FeaturedCourses'
+import HowItWorks from '../Component/Home/HowItWorks'
+import TopInstructors from '../Component/Home/TopInstructor'
+import CTASection from "../Component/Home/CTASection"
+import Footer from '../Component/Home/UI/Footer'
 
 
 
@@ -22,7 +26,14 @@ export default function Home() {
      />
 
      <WhyChooseUs  />
- 
+     <HowItWorks />
+     <TopInstructors />
+     <CTASection/>
+     <Footer
+    //  title1="Quick Links"
+    //  title2="Support"
+    //  title3="Contact"
+     />
     </div>
   )
 }

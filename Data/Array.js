@@ -6,39 +6,76 @@ export const Right = [
   { id: 5, Level: "+", color: "bg-primary/20 text-gray-700" },
 ];
 
-export const recommendations = [ 
-  { id: 1, title: "Web Development",  icon: "fas fa-code",},
-  { id: 2, title: "Data Science",  icon: "fas fa-chart-bar",},
-  { id: 3,title: "UI/UX Design",  icon: "fas fa-palette",},
+export const recommendations = [
+  { id: 1, title: "Web Development", icon: "fas fa-code" },
+  { id: 2, title: "Data Science", icon: "fas fa-chart-bar" },
+  { id: 3, title: "UI/UX Design", icon: "fas fa-palette" },
 ];
 export const popularCourses = [
-  { id: 1, title: "JavaScript for Beginners", desc: "Learn the basics of JavaScript, the most popular programming language in web development.",icon: "fas fa-code", instructor: "John Doe", },
-  { id: 2, title: "Data Science with Python", desc: "Master data analysis, visualization, and machine learning using Python.", icon: "fas fa-chart-bar", instructor: "Jane Smith", },
-  { id: 3, title: "UI/UX Design Fundamentals", desc: "Design beautiful and user-friendly digital experiences.", icon: "fas fa-palette", instructor: "Emily Johnson", },
-  { id: 4, title: "Machine Learning A-Z", desc: "A comprehensive guide to machine learning algorithms and techniques.", icon: "fas fa-robot", instructor: "Michael Brown", },
+  {
+    id: 1,
+    title: "JavaScript for Beginners",
+    desc: "Learn the basics of JavaScript, the most popular programming language in web development.",
+    icon: "fas fa-code",
+    instructor: "John Doe",
+  },
+  {
+    id: 2,
+    title: "Data Science with Python",
+    desc: "Master data analysis, visualization, and machine learning using Python.",
+    icon: "fas fa-chart-bar",
+    instructor: "Jane Smith",
+  },
+  {
+    id: 3,
+    title: "UI/UX Design Fundamentals",
+    desc: "Design beautiful and user-friendly digital experiences.",
+    icon: "fas fa-palette",
+    instructor: "Emily Johnson",
+  },
+  {
+    id: 4,
+    title: "Machine Learning A-Z",
+    desc: "A comprehensive guide to machine learning algorithms and techniques.",
+    icon: "fas fa-robot",
+    instructor: "Michael Brown",
+  },
 ];
 export const FilterButtons = [
-  { 
-    id: 'popular', 
-    text: 'Most Popular', 
-    variant: 'square',
-    onClick: () => console.log("Most Popular clicked")
+  {
+    id: "popular",
+    text: "Most Popular",
+    variant: "square",
+    onClick: () => console.log("Most Popular clicked"),
   },
-  { 
-    id: 'trending', 
-    text: 'New & Trending', 
-    variant: 'squareOutline',
-    onClick: () => console.log("New & Trending clicked")
+  {
+    id: "trending",
+    text: "New & Trending",
+    variant: "squareOutline",
+    onClick: () => console.log("New & Trending clicked"),
   },
-  { 
-    id: 'career', 
-    text: 'Career Paths', 
-    variant: 'squareOutline',
-    onClick: () => console.log("Career Paths clicked")
-  }
+  {
+    id: "career",
+    text: "Career Paths",
+    variant: "squareOutline",
+    onClick: () => console.log("Career Paths clicked"),
+  },
 ];
 // src/Data/Array.js (or wherever you keep it)
-import { FaCode, FaChartBar, FaPalette, FaRobot, FaMobileAlt, FaServer, FaDatabase, FaCloud, FaShieldAlt, FaBullhorn, FaBriefcase, FaPython } from "react-icons/fa";
+import {
+  FaCode,
+  FaChartBar,
+  FaPalette,
+  FaRobot,
+  FaMobileAlt,
+  FaServer,
+  FaDatabase,
+  FaCloud,
+  FaShieldAlt,
+  FaBullhorn,
+  FaBriefcase,
+  FaPython,
+} from "react-icons/fa";
 
 export const CategoriesArray = [
   {
@@ -139,47 +176,183 @@ export const CategoriesArray = [
   },
 ];
 
-
-
-
-
+// WhyChoseUs
 import {
   FaUserGraduate,
   FaInfinity,
   FaCertificate,
   FaDollarSign,
   FaLaptop,
+  FaUserPlus,
+  FaBookOpen,
 } from "react-icons/fa";
+
 export const features = [
-    {
-      icon: FaUserGraduate ,
-      title: "Learn from Experts",
-      desc: "Gain knowledge from industry professionals with years of real-world experience.",
-      gradient: "from-[#3baee9] to-[#2a9fd8]",
+  {
+    id: 1,
+    icon: FaUserGraduate,
+    title: "Learn from Experts",
+    desc: "Gain knowledge from industry professionals with years of real-world experience.",
+    gradient: "from-[#3baee9] to-[#2a9fd8]",
+  },
+  {
+    id: 2,
+    icon: FaInfinity,
+    title: "Lifetime Access",
+    desc: "Access all your courses anytime, anywhere with no expiry limit.",
+    gradient: "from-[#3baee9] to-[#2a9fd8]",
+  },
+  {
+    id: 3,
+    icon: FaDollarSign,
+    title: "Affordable Pricing",
+    desc: "Get high-quality learning without breaking the bank.",
+    gradient: "from-[#3baee9] to-[#2a9fd8]",
+  },
+  {
+    id: 4,
+    icon: FaCertificate,
+    title: "Certificate of Completion",
+    desc: "Receive a professional certificate to showcase your skills.",
+    gradient: "from-[#3baee9] to-[#2a9fd8]",
+  },
+  {
+    id: 5,
+    icon: FaLaptop,
+    title: "Flexible Online Learning",
+    desc: "Learn at your own pace with interactive, online classes.",
+    gradient: "from-[#3baee9] to-[#2a9fd8]",
+  },
+];
+
+// HowItWorks
+export const steps = [
+  {
+    number: "01",
+    icon: FaUserPlus, // unique icon
+    title: "Sign Up for Free",
+    description:
+      "Create your account in seconds with no commitment. Start your learning journey instantly.",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    number: "02",
+    icon: FaBookOpen, // new icon
+    title: "Choose Your Course",
+    description:
+      "Browse our extensive catalog and select the perfect course for your goals and skill level.",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    number: "03",
+    icon: features.find((f) => f.id === 5)?.icon,
+    title: "Start Learning Online",
+    description:
+      "Access interactive content, video lessons, and practical exercises at your own pace.",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+  {
+    number: "04",
+    icon: features.find((f) => f.id === 4)?.icon,
+    title: "Earn Your Certificate",
+    description:
+      "Complete the course and receive a professional certificate to showcase your achievement.",
+    gradient: "from-blue-500 to-cyan-500",
+  },
+];
+
+// instructer data
+import image from "../images/sir dawood.jpg";
+import images from "../images/sir aizaz.jpeg";
+export const instructors = [
+  {
+    id: 1,
+    name: "Mian Dawood",
+    title: "Senior Full Stack Web Developer",
+    image: image,
+    rating: 4.9,
+    students: 12500,
+    courses: 15,
+    experience: "10+ years",
+    specialization: [
+      "Express",
+      "APIS Specialist",
+      "AI & Machine Learning Integration",
+      "Laravel",
+    ],
+    description:
+      "Experienced Full Stack Developer with over 8 years of expertise in building scalable web applications. Specializes in backend APIs, AI integration, and modern frameworks like Express and Laravel. Passionate about mentoring and creating impactful digital solutions..",
+    social: {
+      linkedin: "https://www.linkedin.com/in/miandawoodshah/",
+      twitter: "#",
+      github: "#",
     },
-    {
-      icon: FaInfinity ,
-      title: "Lifetime Access",
-      desc: "Access all your courses anytime, anywhere with no expiry limit.",
-      gradient: "from-[#3baee9] to-[#2a9fd8]",
+    alignment: "left",
+  },
+  {
+    id: 2,
+    name: "Mian Aizaz",
+    title: "Frontend Developer",
+    image: images,
+    rating: 4.8,
+    students: 4900,
+    courses: 12,
+    experience: "7+ years",
+    specialization: ["React Js", "Next Js", "TS", "Php"],
+    description:
+      "Passionate Frontend Developer with a strong focus on building interactive, scalable, and user-friendly web applications using React and Next.js. Dedicated to crafting clean UI and seamless user experiences with modern technologies.",
+    social: {
+      linkedin: "https://www.linkedin.com/in/mian-aizaz-92a690172/",
+      twitter: "#",
+      github: "#",
     },
-    {
-      icon: FaDollarSign ,
-      title: "Affordable Pricing",
-      desc: "Get high-quality learning without breaking the bank.",
-      gradient: "from-[#3baee9] to-[#2a9fd8]",
-    },
-    {
-      icon: FaCertificate ,
-      title: "Certificate of Completion",
-      desc: "Receive a professional certificate to showcase your skills.",
-      gradient: "from-[#3baee9] to-[#2a9fd8]",
-    },
-    {
-      icon: FaLaptop ,
-      title: "Flexible Online Learning",
-      desc: "Learn at your own pace with interactive, online classes.",
-      gradient: "from-[#3baee9] to-[#2a9fd8]",
-    },
-  ];
-  export default features;
+    alignment: "right",
+  },
+];
+
+// CTA
+export const CTA = [
+  "Expert-led courses",
+  "Flexible learning",
+  "Career advancement",
+];
+
+
+
+// src/Data/Array.js (Alternative Version)
+
+
+export const footerData=[
+  {title1:"quicklinks"},
+  {title2:"Support"},
+  {title3:"Contact"}
+]
+export const quickLinks = [
+  { name: "All Courses", href: "#" },
+  { name: "About Us", href: "#" },
+  { name: "Blog", href: "#" },
+  { name: "Careers", href: "#" },
+  { name: "Contact", href: "#" },
+];
+
+export const supportLinks = [
+  { name: "Help Center", href: "#" },
+  { name: "FAQs", href: "#" },
+  { name: "Privacy Policy", href: "#" },
+  { name: "Terms of Service", href: "#" },
+  { name: "Refund Policy", href: "#" },
+];
+
+export const socialLinks = [
+  { icon: "FaFacebookF", href: "#", color: "hover:bg-blue-600" },
+  { icon: "FaTwitter", href: "#", color: "hover:bg-sky-500" },
+  { icon: "FaLinkedinIn", href: "#", color: "hover:bg-blue-700" },
+  { icon: "FaInstagram", href: "#", color: "hover:bg-pink-600" },
+  { icon: "FaYoutube", href: "#", color: "hover:bg-red-600" },
+];
+
+export const Features = [
+  { icon: "FaCode", title: "Quality Courses", desc: "Industry-relevant content" },
+  { icon: "FaShieldAlt", title: "Secure Learning", desc: "Your data is protected" },
+  { icon: "FaHeadset", title: "24/7 Support", desc: "Always here to help" },
+];
