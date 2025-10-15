@@ -4,10 +4,11 @@ import {
   FaStar,
   FaUsers,
   FaPlayCircle,
-  FaLinkedin,
-  FaTwitter,
-  FaGithub,
+  // FaLinkedin,
+  // FaTwitter,
+  // FaGithub,
 } from "react-icons/fa";
+import { socialIcons } from "../../../Data/Array";
 import SectionHeader from "./UI/SectionHeader";
 import { instructors } from "../../../Data/Array";
 import Button from "./UI/Button";
@@ -72,41 +73,34 @@ export default function TopInstructors() {
                   {/* Social Links - Minimal */}
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-2xl shadow-xl border border-gray-100 px-4 py-3">
                     <div className="flex gap-2">
-                      <a
-                        href={instructor.social.linkedin}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-600 hover:bg-blue-50 hover:text-blue-600 transition-colors duration-300"
-                      >
-                        <FaLinkedin className="text-sm" />
-                      </a>
-                      <a
-                        href={instructor.social.twitter}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-600 hover:bg-sky-50 hover:text-sky-600 transition-colors duration-300"
-                      >
-                        <FaTwitter className="text-sm" />
-                      </a>
-                      <a
-                        href={instructor.social.github}
-                        className="w-8 h-8 rounded-lg flex items-center justify-center text-gray-600 hover:bg-gray-50 hover:text-gray-900 transition-colors duration-300"
-                      >
-                        <FaGithub className="text-sm" />
-                      </a>
+                      {socialIcons.map(({ icon: Icon, color, key }) => (
+                        <a
+                          key={key}
+                          href={instructor.social[key]}
+                          className={`w-8 h-8 rounded-lg flex items-center justify-center text-gray-600 transition-colors duration-300 ${color}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <Icon className="text-sm" />
+                        </a>
+                      ))}
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Content Section */}
-              <div className="flex-1 max-w-2xl">
+              <div className="flex-1 max-w-2xl mx-4 lg:mx-0" >
                 <div className="space-y-6">
                   {/* Name & Title */}
-                  <div>
+                  <div >
                     <h3 className="text-3xl font-bold text-gray-900 mb-3">
                       {instructor.name}
                     </h3>
                     <p className="text-lg text-primary font-semibold mb-4">
                       {instructor.title}
                     </p>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed text-justify">
                       {instructor.description}
                     </p>
                   </div>

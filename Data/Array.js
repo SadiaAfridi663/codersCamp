@@ -310,6 +310,27 @@ export const instructors = [
   },
 ];
 
+// instructor social icons
+import { FaLinkedin, FaTwitter, FaGithub } from "react-icons/fa";
+
+export const socialIcons = [
+  {
+    icon: FaLinkedin,
+    color: "hover:bg-blue-50 hover:text-blue-600",
+    key: "linkedin",
+  },
+  {
+    icon: FaTwitter,
+    color: "hover:bg-sky-50 hover:text-sky-600",
+    key: "twitter",
+  },
+  {
+    icon: FaGithub,
+    color: "hover:bg-gray-50 hover:text-gray-900",
+    key: "github",
+  },
+];
+
 // CTA
 export const CTA = [
   "Expert-led courses",
@@ -317,42 +338,138 @@ export const CTA = [
   "Career advancement",
 ];
 
+export const FooterLink = {
+  quickLinks: [
+    { name: "All Courses", href: "#" },
+    { name: "About Us", href: "#" },
+    { name: "Blog", href: "#" },
+    { name: "Careers", href: "#" },
+    { name: "Contact", href: "#" },
+  ],
+  supportLinks: [
+    { name: "Help Center", href: "#" },
+    { name: "FAQs", href: "#" },
+    { name: "Privacy Policy", href: "#" },
+    { name: "Terms of Service", href: "#" },
+    { name: "Refund Policy", href: "#" },
+  ],
+  contact: {
+    address: "123 Learning St, Knowledge City, Edu 45678",
+    phone: "(123) 456-7890",
+    email: "info@bitcoderlabs.com",
+  },
+  socialLinks: [
+    { icon: "FaFacebookF", href: "#", color: "hover:bg-blue-600" },
+    { icon: "FaTwitter", href: "#", color: "hover:bg-sky-500" },
+    { icon: "FaLinkedinIn", href: "#", color: "hover:bg-blue-700" },
+    { icon: "FaInstagram", href: "#", color: "hover:bg-pink-600" },
+    { icon: "FaYoutube", href: "#", color: "hover:bg-red-600" },
+  ],
+};
 
-
-// src/Data/Array.js (Alternative Version)
-
-
-export const footerData=[
-  {title1:"quicklinks"},
-  {title2:"Support"},
-  {title3:"Contact"}
-]
-export const quickLinks = [
-  { name: "All Courses", href: "#" },
-  { name: "About Us", href: "#" },
-  { name: "Blog", href: "#" },
-  { name: "Careers", href: "#" },
-  { name: "Contact", href: "#" },
-];
-
-export const supportLinks = [
-  { name: "Help Center", href: "#" },
-  { name: "FAQs", href: "#" },
-  { name: "Privacy Policy", href: "#" },
-  { name: "Terms of Service", href: "#" },
-  { name: "Refund Policy", href: "#" },
-];
-
-export const socialLinks = [
-  { icon: "FaFacebookF", href: "#", color: "hover:bg-blue-600" },
-  { icon: "FaTwitter", href: "#", color: "hover:bg-sky-500" },
-  { icon: "FaLinkedinIn", href: "#", color: "hover:bg-blue-700" },
-  { icon: "FaInstagram", href: "#", color: "hover:bg-pink-600" },
-  { icon: "FaYoutube", href: "#", color: "hover:bg-red-600" },
-];
-
+// ✅ agar Features use ho raha hai to wo bhi export kar do:
 export const Features = [
-  { icon: "FaCode", title: "Quality Courses", desc: "Industry-relevant content" },
-  { icon: "FaShieldAlt", title: "Secure Learning", desc: "Your data is protected" },
-  { icon: "FaHeadset", title: "24/7 Support", desc: "Always here to help" },
+  {
+    icon: "FaHeadset",
+    title: "24/7 Support",
+    desc: "Get instant help anytime you need.",
+  },
+  {
+    icon: "FaCode",
+    title: "Practical Learning",
+    desc: "Hands-on coding experience.",
+  },
+  {
+    icon: "FaShieldAlt",
+    title: "Secure Platform",
+    desc: "Safe and reliable learning environment.",
+  },
 ];
+
+
+export const blogPosts = [
+    {
+      id: 1,
+      title: "Getting Started with React 19: What's New and Improved",
+      description:
+        "Discover the latest features and improvements in React 19 and how they can enhance your development workflow.",
+      image:
+        "https://images.unsplash.com/photo-1633356122544-f134324a6cee?auto=format&fit=crop&w=1000&q=80",
+      category: "React",
+      date: "Dec 15, 2024",
+      author: "Sarah Johnson",
+      readTime: "5 min read",
+      featured: true,
+    },
+  ];
+
+
+
+  // companies colelaboration data
+  import navttc from "../images/NAVTTC.jpg";
+  import srsp from "../images/srsp.png";
+  import pseb from "../images/PSEB.png";
+  import techlogix from "../images/Techlogix.jpeg";
+  import systemsLimited from "../images/Systems Limited.png";
+  import kpITBoard from "../images/KP IT Board.jpeg";
+  import digikhata from "../images/DigiKhata.png";
+  export const companies = [
+    {
+      id: 1,
+      name: "NAVTTC",
+      logo: navttc,
+      students: "8K+",
+      courses: "35+",
+      type: "Government"
+    },
+    {
+      id: 2,
+      name  : "SRSP",
+      logo: srsp,
+      students: "5.5K+",
+      courses: "28+",
+      type: "NGO"
+    },
+    {
+      id: 3,
+      name: "PSEB",
+      logo: pseb,
+      students: "6.2K+",
+      courses: "32+",
+      type: "Government"
+    },
+    {
+      id: 4,
+      name: "Techlogix",
+      logo: techlogix,
+      students: "3.8K+",
+      courses: "20+",
+      type: "Private"
+    },
+    {
+      id: 5,
+      name: "Systems Limited",
+      logo: systemsLimited,
+      students: "4.5K+",
+      courses: "25+",
+      type: "Private"
+    },
+    {
+      id: 6,
+      name: "KP IT Board",
+      logo: kpITBoard,
+      students: "7.1K+",
+      courses: "30+",
+      type: "Government"
+    },
+    {
+      id: 7,
+      name: "DigiKhata",
+      logo: digikhata,
+      students: "2.3K+",
+      courses: "15+",
+      type: "Startup"
+    },
+    
+  ];
+

@@ -7,6 +7,8 @@ import HowItWorks from '../Component/Home/HowItWorks'
 import TopInstructors from '../Component/Home/TopInstructor'
 import CTASection from "../Component/Home/CTASection"
 import Footer from '../Component/Home/UI/Footer'
+import Blog from '../Component/Home/Blog'
+import CompanyCollaboration from '../Component/Home/CompanyCollaboration'
 
 
 
@@ -28,12 +30,10 @@ export default function Home() {
      <WhyChooseUs  />
      <HowItWorks />
      <TopInstructors />
+     <Blog />
+     <CompanyCollaboration />
      <CTASection/>
-     <Footer
-    //  title1="Quick Links"
-    //  title2="Support"
-    //  title3="Contact"
-     />
+     <Footer/>
     </div>
   )
 }

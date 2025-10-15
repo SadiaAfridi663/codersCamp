@@ -8,32 +8,44 @@ export default function Input({
   onChange,
   onClick,
   showButton = true,
+  variant = "default",
   className = "",
 }) {
+  const variants = {
+    default:
+      "px-1 py-2 text-lg rounded-full border border-gray-300 shadow-lg focus:ring-4",
+    small:
+      "px-1 py-2 text-sm rounded-full border border-gray-300 shadow-md focus:ring-2",
+  };
+
   return (
     <div className={`max-w-2xl mx-auto mb-12 ${className}`}>
-      <div className="relative">
+      <div
+        className={`flex items-center gap-2 bg-white rounded-full overflow-hidden ${variants[variant]}`}
+      >
+        {/* Icon */}
+        <i
+          className={`fas fa-search ml-4 ${
+            variant === "small" ? "text-sm" : "text-xl"
+          } text-gray-400`}
+        ></i>
+
         {/* Input Field */}
         <input
           type={type}
           placeholder={placeholder}
           value={value}
           onChange={onChange}
-          className="w-full px-6 py-4 pl-14 rounded-full border border-gray-300 shadow-lg 
-         focus:outline-none focus:ring-4 focus:ring-primary/20 
-         focus:border-primary text-lg transition-all duration-300 text-white bg-transparent"
+          className="flex-1 text-gray-800 placeholder-gray-400 bg-transparent focus:outline-none"
         />
-
-        {/* Icon */}
-        <i className="fas fa-search absolute left-5 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl"></i>
 
         {/* Optional Button */}
         {showButton && (
           <Button
             text="Search"
-            size="md"
+            size={variant === "small" ? "sm" : "md"}
             onClick={onClick}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2  transition-colors duration-300"
+            className="mr-2"
           />
         )}
       </div>
