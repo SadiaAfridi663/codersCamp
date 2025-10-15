@@ -1,8 +1,8 @@
 // src/Component/Home/HowItWorks.jsx
 import React from "react";
 import { steps } from "../../../Data/Array";
-import SectionHeader from "./UI/SectionHeader";
-import Button from "./UI/Button";
+import SectionHeader from "../UI/SectionHeader";
+import Button from "../UI/Button";
 
 export default function HowItWorks() {
   return (

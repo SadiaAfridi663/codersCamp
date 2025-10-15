@@ -6,7 +6,7 @@ import FeaturedCourses from '../Component/Home/FeaturedCourses'
 import HowItWorks from '../Component/Home/HowItWorks'
 import TopInstructors from '../Component/Home/TopInstructor'
 import CTASection from "../Component/Home/CTASection"
-import Footer from '../Component/Home/UI/Footer'
+import Footer from '../Component/UI/Footer'
 import Blog from '../Component/Home/Blog'
 import CompanyCollaboration from '../Component/Home/CompanyCollaboration'
 

@@ -1,8 +1,9 @@
 // src/Component/Home/CTAModern.jsx
 import React from "react";
 import { FaCheck, FaArrowRight, FaPlay } from "react-icons/fa";
-import Button from "./UI/Button";
+import Button from "../UI/Button";
 import {CTA} from "../../../Data/Array"
+
 
 export default function CTAModern() {
   return (

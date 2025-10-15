@@ -3,8 +3,8 @@ import React from "react";
 
 import { FaArrowRight } from "react-icons/fa";
 import {features} from "../../../Data/Array"
-import Button from "./UI/Button";
-import SectionHeader from "./UI/SectionHeader";
+import Button from "../UI/Button";
+import SectionHeader from "../UI/SectionHeader";
 import image from "../../../images/whychoseUs.avif"
 
 

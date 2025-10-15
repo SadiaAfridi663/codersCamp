@@ -1,14 +1,12 @@
-
-import heroimage from "../../assets/hero.avif"
-import Button from "./UI/Button";
-import Input from "./UI/Input";
+import heroimage from "../../assets/hero.avif";
+import Button from "../UI/Button";
+import Input from "../UI/Input";
 import HeroRight from "./HeroRight";
 
-const HeroSection = ({ title, SubTitle,}) => {
- 
+const HeroSection = ({ title, SubTitle }) => {
   return (
     <section
-      className="relative flex items-center justify-around overflow-hidden px-10 pb-10 bg-cover bg-center bg-no-repeat"
+      className="relative flex flex-col md:flex-row items-center justify-around overflow-hidden px-10 pb-10 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${heroimage})` }}
     >
       {/* Overlay */}
@@ -25,27 +23,22 @@ const HeroSection = ({ title, SubTitle,}) => {
           {SubTitle}
         </p>
 
-       
-        
-          {/* Search */}
-          <Input type="text"  placeholder="enter text here" />
-        
+        {/* Search */}
+        <Input type="text" placeholder="enter text here" />
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <div className="flex  gap-4 justify-center items-center">
           <Button text="Browse Course" />
           <Button text=" Start Learning for Free" variant="outline" />
         </div>
       </div>
 
-        {/* Right Section */}
+      {/* Right Section */}
       <HeroRight
         Righttitle="Courses For Every Level"
         secondtital="Biggner To Advance"
         thirdtitle="Learning in process"
       />
-
-
     </section>
   );
 };

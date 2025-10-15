@@ -1,9 +1,9 @@
 // src/Component/Home/BlogSection.jsx
 import React from "react";
 import { FaCalendar, FaUser, FaArrowRight, FaClock } from "react-icons/fa";
-import SectionHeader from "./UI/SectionHeader";
+import SectionHeader from "../UI/SectionHeader";
 import { blogPosts } from "../../../Data/Array";
-import Button from "./UI/Button";
+import Button from "../UI/Button";
 
 export default function BlogSection() {
   

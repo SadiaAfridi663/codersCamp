@@ -1,6 +1,6 @@
 import React from "react";
 import * as FaIcons from "react-icons/fa";
-import { FooterLink } from "../../../../Data/Array"; // ✅ Make sure path is correct
+import { FooterLink } from "../../../Data/Array"; // ✅ Make sure path is correct
 
 export default function FooterSection() {
   const { quickLinks, supportLinks, contact } = FooterLink;

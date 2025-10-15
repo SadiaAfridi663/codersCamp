@@ -1,5 +1,5 @@
 import React from "react";
-import Button from "../Home/UI/Button";
+import Button from "../UI/Button";
 import { FilterButtons } from "../../../Data/Array";
 import FeaturedCoursesCategories from "./FeaturedCoursesCategories";
 

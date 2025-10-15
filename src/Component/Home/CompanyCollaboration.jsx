@@ -1,6 +1,6 @@
 import React from "react";
 import { companies } from "../../../Data/Array";
-import CustomSlider from "../../Component/Home/UI/Slider";
+import CustomSlider from "../UI/Slider";
 import CompanyCard from "./CompanyCard";
 
 export default function CompanyCollaboration() {

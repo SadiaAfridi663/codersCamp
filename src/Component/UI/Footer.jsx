@@ -13,7 +13,7 @@ import {
   FaInstagram,
   FaYoutube,
 } from "react-icons/fa";
-import { FooterLink, Features } from "../../../../Data/Array"; // ✅ sirf ye 2 import
+import { FooterLink, Features } from "../../../Data/Array"; // ✅ sirf ye 2 import
 import Input from "./Input";
 import FooterLinks from "./FooterLinks"; // ✅ correct import name
 

@@ -9,9 +9,9 @@ import {
   // FaGithub,
 } from "react-icons/fa";
 import { socialIcons } from "../../../Data/Array";
-import SectionHeader from "./UI/SectionHeader";
+import SectionHeader from "../UI/SectionHeader";
 import { instructors } from "../../../Data/Array";
-import Button from "./UI/Button";
+import Button from "../UI/Button";
 
 export default function TopInstructors() {
   return (
