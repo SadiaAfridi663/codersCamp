@@ -22,10 +22,7 @@ export default function Home() {
       />
       <FeaturedCourses/>
 
-     <Categories
-       Categoriestitle="Explore Learning Paths"
-       CategoriesSubtitle="Discover your perfect learning journey with our curated categories."
-     />
+     <Categories/>
 
      <WhyChooseUs  />
      <HowItWorks />

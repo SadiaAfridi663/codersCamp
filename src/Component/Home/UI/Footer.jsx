@@ -61,7 +61,7 @@ export default function Footer() {
 
         {/* Main Footer */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          <div className="flex gap-10  px-5">
+          <div className="flex flex-col md:flex-row gap-10  px-5">
             {/* Company Info */}
             <div className="lg:col-span-4 max-w-sm">
               <div className="flex items-center gap-3 mb-6">

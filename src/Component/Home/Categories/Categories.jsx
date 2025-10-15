@@ -5,17 +5,22 @@ import {CategoriesArray} from "../../../../Data/Array";
 import CustomSlider from "../UI/Slider";
 
 
-export default function Categories({ Categoriestitle, CategoriesSubtitle }) {
+export default function Categories() {
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Section Header */}
-        <h2 className="text-4xl font-bold mb-3 bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">
-          {Categoriestitle}
-        </h2>
-        <p className="text-gray-600 mb-4 max-w-2xl mx-auto">
-          {CategoriesSubtitle}
-        </p>
+        <div className="text-center mb-14">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mt-2">
+            Explore{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#3baee9] to-[#2a9fd8]">
+              Learning Paths
+            </span>
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto mt-3 text-base">
+            Discover your perfect learning journey with our curated categories.
+          </p>
+        </div>
 
         {/* 🔹 Reusable Slider */}
         <CustomSlider

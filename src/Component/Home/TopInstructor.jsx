@@ -47,7 +47,7 @@ export default function TopInstructors() {
             >
               {/* Image Section  */}
               <div className="flex-1">
-                <div className="relative max-w-md">
+                <div className="relative max-w-lg w-full mx-auto lg:mx-0">
                   {/* Main Image Container */}
                   <div className="relative rounded-2xl overflow-hidden group">
                     <img
