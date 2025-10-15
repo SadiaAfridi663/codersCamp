@@ -1,3 +1,15 @@
+import {
+  FaCode,
+  FaMobileAlt,
+  FaServer,
+  FaDatabase,
+  FaCloud,
+  FaShieldAlt,
+  FaBullhorn,
+  FaBriefcase,
+  FaPython,FaChartBar, FaPalette, FaRobot
+} from "react-icons/fa";
+
 export const Right = [
   { id: 1, Level: "B", color: "bg-primary text-white" },
   { id: 2, Level: "I", color: "bg-primary/80 text-white" },
@@ -11,36 +23,42 @@ export const recommendations = [
   { id: 2, title: "Data Science", icon: "fas fa-chart-bar" },
   { id: 3, title: "UI/UX Design", icon: "fas fa-palette" },
 ];
+
 export const popularCourses = [
   {
     id: 1,
     title: "JavaScript for Beginners",
     desc: "Learn the basics of JavaScript, the most popular programming language in web development.",
-    icon: "fas fa-code",
-    instructor: "John Doe",
+    icon: FaCode,
+    courseCount: "12 Courses",
+    duration: "6 Weeks"
   },
   {
     id: 2,
     title: "Data Science with Python",
     desc: "Master data analysis, visualization, and machine learning using Python.",
-    icon: "fas fa-chart-bar",
-    instructor: "Jane Smith",
+    icon: FaChartBar,
+    courseCount: "8 Courses", 
+    duration: "8 Weeks"
   },
   {
     id: 3,
     title: "UI/UX Design Fundamentals",
     desc: "Design beautiful and user-friendly digital experiences.",
-    icon: "fas fa-palette",
-    instructor: "Emily Johnson",
+    icon: FaPalette,
+    courseCount: "6 Courses",
+    duration: "4 Weeks"
   },
   {
     id: 4,
     title: "Machine Learning A-Z",
     desc: "A comprehensive guide to machine learning algorithms and techniques.",
-    icon: "fas fa-robot",
-    instructor: "Michael Brown",
+    icon: FaRobot,
+    courseCount: "10 Courses",
+    duration: "10 Weeks"
   },
 ];
+
 export const FilterButtons = [
   {
     id: "popular",
@@ -62,20 +80,6 @@ export const FilterButtons = [
   },
 ];
 // src/Data/Array.js (or wherever you keep it)
-import {
-  FaCode,
-  FaChartBar,
-  FaPalette,
-  FaRobot,
-  FaMobileAlt,
-  FaServer,
-  FaDatabase,
-  FaCloud,
-  FaShieldAlt,
-  FaBullhorn,
-  FaBriefcase,
-  FaPython,
-} from "react-icons/fa";
 
 export const CategoriesArray = [
   {
