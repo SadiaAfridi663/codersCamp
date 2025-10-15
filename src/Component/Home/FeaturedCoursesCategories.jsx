@@ -3,7 +3,7 @@ import { popularCourses } from "../../../Data/Array";
 
 export default function FeaturedCoursesCategories() {
   return (
-    <div className="bg-gradient-to-br from-[#0a192f] via-[#112d4e] to-[#3baee9]/10 mx-15 rounded-2xl overflow-visible"> 
+    <div className="bg-gradient-to-br from-[#0a192f] via-[#112d4e] to-[#3baee9]/10 mx-7 rounded-2xl overflow-visible"> 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 gap-5">
         {popularCourses.map((course) => {
           const Icon = course.icon; 
