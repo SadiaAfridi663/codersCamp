@@ -24,6 +24,9 @@ export default function CompanyCollaboration() {
           </p>
         </div>
 
+        <CustomSlider 
+        /> 
+
         {/* Company Cards Grid */}
         <div className="relative">
           <CustomSlider
