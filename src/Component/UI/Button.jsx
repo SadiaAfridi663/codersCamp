@@ -32,11 +32,11 @@ export default function Button({
 
     // 👇 new button styles
     filter:
-      "p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
+      "p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
     list:
-      "p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
+      "p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
     grid:
-      "p-2 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
+      "p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
   };
 
   const sizes = {
@@ -57,11 +57,11 @@ export default function Button({
   const getIcon = () => {
     switch (type) {
       case "filter":
-        return <FaFilter className="w-5 h-5 text-gray-600" />;
+        return <FaFilter className="w-3 h-3 text-gray-600" />;
       case "list":
-        return <FaList className="w-5 h-5 text-gray-600" />;
+        return <FaList className="w-3 h-3 text-gray-600" />;
       case "grid":
-        return <FaThLarge className="w-5 h-5 text-gray-600" />;
+        return <FaThLarge className="w-3 h-3 text-gray-600" />;
       default:
         return icon;
     }

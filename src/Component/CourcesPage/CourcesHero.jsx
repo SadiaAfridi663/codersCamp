@@ -9,7 +9,7 @@ export default function CourseHero({
 }) {
   return (
     <section className="bg-gradient-to-br from-primary-dark via-primary to-blue-600 text-white py-4 px-6 text-center relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10">
+      <div className="max-w-6xl mx-auto relative z-10 pb-3">
         {/* Title & Description */}
         <div className="mb-2">
           <h1 className="text-3xl lg:text-5xl font-bold mb-3 leading-tight">
@@ -20,10 +20,10 @@ export default function CourseHero({
           </p>
         </div>
 
-        <div className="max-w-sm mx-auto relative z-10">
+        <div className="max-w-sm mx-auto mb-7 relative z-10">
           <Input
             type="text"
-            variant="small" // ✅ lowercase 'small'
+            variant="small" 
             placeholder="Search courses here....."
             showButton={true}
             showIcon={true}

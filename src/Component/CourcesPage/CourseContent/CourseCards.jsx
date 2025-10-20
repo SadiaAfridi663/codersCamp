@@ -26,7 +26,7 @@ export default function CourseCard({
     <div
       className={`group bg-white rounded-2xl shadow-sm hover:shadow-2xl border border-gray-100 hover:border-primary/20 overflow-hidden transition-all duration-500 ${
         layout === "list"
-          ? "flex flex-col md:flex-row items-stretch h-[270px]" // 👈 fixed height 270px
+          ? "flex flex-col md:flex-row items-stretch max-h-[270px] h-full" // 👈 fixed height 270px
           : "flex flex-col h-full"
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -35,9 +35,7 @@ export default function CourseCard({
       {/* Thumbnail with Overlay */}
       <div
         className={`relative overflow-hidden ${
-          layout === "list"
-            ? "w-full md:w-2/5 lg:w-1/3 h-48 md:h-auto"
-            : "h-48 w-full"
+          layout === "list" ? "w-full md:w-2/5 lg:w-1/3 h-48 md:h-auto": "h-48 w-full"
         }`}
       >
         <img
@@ -126,7 +124,8 @@ export default function CourseCard({
           {/* Title */}
           <h3
             className={`font-bold text-gray-900 mb-2 line-clamp-2 hover:text-primary transition-colors duration-300 ${
-              layout === "list" ? "text-xl" : "text-lg"
+              layout === "list" ? "text-lg" : "text-lg", layout === "list" ? "text-" : ""  
+                
             }`}
           >
             {course.title}
