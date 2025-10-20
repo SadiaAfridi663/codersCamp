@@ -19,6 +19,7 @@ export const dummyCourses = [
     image: course1,
     description:
       "Learn full-stack web development from scratch using HTML, CSS, JavaScript, React, Node.js, and MongoDB. Build real-world responsive websites, APIs, and deploy them online with hands-on projects and challenges.",
+    features: ["Certification", "Quizzes", "Assignments", "Lifetime Access"],
   },
   {
     id: 2,
@@ -27,12 +28,13 @@ export const dummyCourses = [
     duration: "18h 15m",
     rating: 4.8,
     price: 29.99,
-    category: "Design",
+    category: "UI/UX",
     level: "Intermediate",
     language: "English, Urdu",
     image: course2,
     description:
       "Become a professional UI/UX designer. Learn user research, wireframing, prototyping, color theory, typography, and design systems using Figma and Adobe XD. Create stunning interfaces that improve user experiences.",
+    features: ["Certification", "Quizzes", "Assignments", "Lifetime Access"],
   },
   {
     id: 3,
@@ -42,11 +44,12 @@ export const dummyCourses = [
     rating: 4.9,
     price: 0,
     category: "AI & Machine Learning",
-    level: "Beginner",
+    level: "Advanced",
     language: "English",
     image: course3,
     description:
       "Understand the basics of Artificial Intelligence without coding. Learn how AI is transforming industries, how to manage AI projects, and build intelligent business solutions. Perfect for students and professionals alike.",
+    features: ["Certification", "Assignments", "Lifetime Access"],
   },
   {
     id: 4,
@@ -55,7 +58,7 @@ export const dummyCourses = [
     duration: "25h 10m",
     rating: 4.7,
     price: 34.99,
-    category: "Programming",
+    category: "JS Mastery",
     level: "Intermediate",
     language: "English",
     image: course4,
@@ -83,11 +86,129 @@ export const dummyCourses = [
     duration: "7h 25m",
     rating: 4.6,
     price: 0,
-    category: "Career Development",
+    category: "Freelancing",
     level: "Beginner",
     language: "Urdu",
     image: course6,
     description:
       "Kickstart your freelancing career with practical strategies on Fiverr, Upwork, and Freelancer. Learn profile optimization, proposal writing, client communication, and how to build long-term client relationships.",
   },
+  // 🔥 New Added Courses
+  {
+    id: 7,
+    title: "React & Next.js Advanced Frontend Development",
+    instructor: "Maximilian Schwarzmüller",
+    duration: "38h 10m",
+    rating: 4.8,
+    price: 44.99,
+    category: "Web Development",
+    level: "Advanced",
+    language: "English",
+    image: course1,
+    description:
+      "Build fast, scalable, and SEO-friendly web applications using React and Next.js. Learn server-side rendering, static generation, and API routes with modern deployment strategies.",
+    features: ["Certification", "Projects", "Lifetime Access"],
+  },
+  {
+    id: 8,
+    title: "Figma to UI Mastery: Create Modern Web Interfaces",
+    instructor: "Ali Haider",
+    duration: "14h 45m",
+    rating: 4.7,
+    price: 24.99,
+    category: "UI/UX",
+    level: "Beginner",
+    language: "English",
+    image: course2,
+    description:
+      "Learn how to design beautiful, functional websites using Figma. Understand design grids, auto-layout, and interactive prototypes that convert users effectively.",
+    features: ["Certification", "Assignments", "Quizzes"],
+  },
+  {
+    id: 9,
+    title: "Deep Learning with TensorFlow and Keras",
+    instructor: "Andrew Ng",
+    duration: "45h 30m",
+    rating: 4.9,
+    price: 69.99,
+    category: "AI & Machine Learning",
+    level: "Advanced",
+    language: "English",
+    image: course3,
+    description:
+      "Master deep learning fundamentals. Build neural networks, CNNs, and RNNs using TensorFlow and Keras to solve complex AI challenges and deploy real-world applications.",
+    features: ["Certification", "Projects", "Lifetime Access"],
+  },
+  {
+    id: 10,
+    title: "Modern JavaScript + TypeScript for Developers",
+    instructor: "Jonas Schmedtmann",
+    duration: "22h 20m",
+    rating: 4.8,
+    price: 39.99,
+    category: "JS Mastery",
+    level: "Intermediate",
+    language: "English",
+    image: course4,
+    description:
+      "Learn advanced ESNext and TypeScript concepts. Build large-scale web applications confidently with static typing, interfaces, generics, and modular architecture.",
+    features: ["Certification", "Assignments", "Lifetime Access"],
+  },
+  {
+    id: 11,
+    title: "Data Analysis with Python and Pandas",
+    instructor: "Kirill Eremenko",
+    duration: "33h 15m",
+    rating: 4.6,
+    price: 54.99,
+    category: "Data Science",
+    level: "Intermediate",
+    language: "English",
+    image: course5,
+    description:
+      "Learn how to clean, analyze, and visualize data efficiently using Python libraries. Build powerful insights and dashboards for real-world datasets.",
+    features: ["Certification", "Quizzes", "Assignments"],
+  },
+  {
+    id: 12,
+    title: "Advanced Freelancing Strategies for 2025",
+    instructor: "Hassan Raza",
+    duration: "10h 00m",
+    rating: 4.7,
+    price: 19.99,
+    category: "Freelancing",
+    level: "Advanced",
+    language: "English, Urdu",
+    image: course6,
+    description:
+      "Take your freelancing to the next level. Learn to scale your business, manage clients effectively, and automate tasks to grow your online income stream.",
+    features: ["Certification", "Case Studies", "Lifetime Access"],
+  },
+];
+
+
+// src/Data/filterData.js
+
+export const categories = [
+  "Web Development",
+  "Data Science",
+  "Mobile Development",
+  "UI/UX",
+  "JS Mastery",
+  "Freelancing",
+  "AI & Machine Learning",
+];
+
+export const levels = ["Beginner", "Intermediate", "Advanced", "All Levels"];
+
+export const durations = ["0-2 hours", "2-5 hours", "5-10 hours", "10+ hours"];
+
+export const languages = ["English", "Spanish", "French", "German", "Hindi"];
+
+export const features = [
+  "Certification",
+  "Quizzes",
+  "Assignments",
+  "Downloadable Resources",
+  "Lifetime Access",
 ];

@@ -1,13 +1,29 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 // import HomeHero from "./Component/Home/HomeHero"
 import Home from './Pages/Home'
 import Navbar from "./Component/Header/Navbar";
+import Footer from "./Component/UI/Footer";
 import Courses from "./Pages/Cources";
 import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contact from "./Pages/Contact";
 
+
+
 function App() {
+  
+
+useEffect(() => {
+  AOS.init({
+    duration: 1000, // animation duration (ms)
+    once: true, // animate only once
+    offset: 100, // start animation before element enters viewport
+  });
+}, []);
+
 
   return (
     <div>
@@ -19,7 +35,9 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/prices" element={<Prices />} />
         <Route path="/contact" element={<Contact />} />
+        
       </Routes>
+      <Footer/>
     </Router>
     </div>
   )
