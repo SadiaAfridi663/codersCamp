@@ -9,7 +9,7 @@ export default function CourseHero({
 }) {
   return (
     <section className="bg-gradient-to-br from-primary-dark via-primary to-blue-600 text-white py-4 px-6 text-center relative overflow-hidden">
-      <div className="max-w-6xl mx-auto relative z-10 pb-3">
+      <div className="max-w-6xl mx-auto relative z-10 pb-10">
         {/* Title & Description */}
         <div className="mb-2">
           <h1 className="text-3xl lg:text-5xl font-bold mb-3 leading-tight">
@@ -32,7 +32,7 @@ export default function CourseHero({
         </div>
 
         {/* Stats Section */}
-        <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-4 mb-2 border border-white/20 max-w-xl mx-auto">
+        <div className="bg-white/10 backdrop-blur-sm rounded-2xl px-8 py-6  border border-white/20 max-w-xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {

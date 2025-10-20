@@ -3,7 +3,7 @@ import CourseCard from "./CourseCards";
 import { dummyCourses } from "../../../../Data/Courses.Array";
 import Button from "../../UI/Button";
 import { FaGraduationCap, FaFilter, FaThLarge, FaList } from "react-icons/fa";
-import Filter from "../FIlter";
+import Filter from "../Filter/FIlter";
 
 export default function CourseGrid() {
   const [layout, setLayout] = useState("grid");
@@ -99,7 +99,7 @@ export default function CourseGrid() {
         </div>
       </div>
 
-      {/* ✅ Dark Overlay when Filter is Open */}
+      {/* Dark Overlay when Filter is Open */}
       {showFilter && (
         <div
           className="fixed inset-0 bg-black/70 z-40 lg:hidden"
