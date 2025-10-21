@@ -5,69 +5,121 @@ import Button from "../UI/Button";
 
 export default function Hero() {
   return (
-    <section className="w-full bg-gradient-to-br from-[#0a192f] via-[#112d4e] to-[#3baee9]/10 text-white py-20 px-10 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 items-center gap-12">
-        {/* LEFT CONTENT */}
-        <motion.div
-          className="text-center lg:text-left max-w-2xl mx-auto lg:mx-0"
-          initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          {/* Top Small Text */}
-          <span className="text-white text-sm font-medium tracking-wide uppercase">
-            {aboutArray.topText}
-          </span>
+    <section className="w-full min-h-screen bg-gradient-to-br from-primary/15 to-blue-50 relative flex items-center justify-center overflow-hidden py-12">
+      {/* Background Pattern */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-primary rounded-full"></div>
+        <div className="absolute bottom-32 right-20 w-40 h-40 bg-primary-dark rounded-full"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-primary rounded-full"></div>
+      </div>
 
-          {/* Heading */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight mt-2">
-            {aboutArray.heading}
-          </h1>
-
-          {/* Sub Heading */}
-          <p className="mt-5 text-lg text-gray-300">{aboutArray.subHeading}</p>
-
-          {/* Buttons */}
-          <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <Button text={aboutArray.primaryBtn} variant="primary" />
-            <Button text={aboutArray.secondaryBtn} variant="outline" />
-          </div>
-        </motion.div>
-
-        {/* RIGHT IMAGE SIDE */}
-        <motion.div
-          className="relative w-full flex justify-center lg:justify-end"
-          initial={{ opacity: 0, x: 60 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.7 }}
-        >
-          {/* Glowing Background Circle */}
-          <div className="absolute w-72 h-72 bg-gradient-to-br from-blue-500 to-purple-600 rounded-full blur-3xl opacity-40 top-1/2 -translate-y-1/2"></div>
-
-          {/* Main Image Container */}
-          <div className="relative w-[85%] max-w-md">
-            {/* Main Image */}
-            <img
-              src={aboutArray.image}
-              alt="Technology Illustration"
-              className="w-full rounded-2xl shadow-2xl z-10"
-            />
-
-            {/* Floating Text Card - POSITIONED ON THE IMAGE */}
+      <div className="relative z-10 max-w-7xl mx-auto px-8 w-full">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          {/* Left Content */}
+          <motion.div
+            className="text-center lg:text-left"
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            {/* Top Badge */}
             <motion.div
-              className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 
-                         bg-white/10 backdrop-blur-lg px-6 py-3 rounded-full 
-                         border border-white/20 shadow-xl flex items-center justify-center"
+              className="inline-flex items-center gap-2  text-white bg-primary px-4 py-2 rounded-full text-sm font-medium mb-6 backdrop-blur-sm"
               initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
+              {aboutArray.topText}
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.h1
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.3 }}
+            >
+              <span className="text-primary">Building Modern</span>
+              <br />
+              <span className="text-gray-800">& Innovative</span>
+              <br />
+              <span className="text-gray-800">Digital Solutions</span>
+            </motion.h1>
+
+            {/* Sub Heading */}
+            <motion.p
+              className="text-xl text-gray-600 leading-relaxed mb-8 max-w-2xl"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.4 }}
+            >
+              {aboutArray.subHeading}
+            </motion.p>
+
+            {/* Buttons */}
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
             >
-              <span className="text-white text-sm font-medium text-center whitespace-nowrap">
-                {aboutArray.textBtn}
-              </span>
+              <Button 
+                text={aboutArray.primaryBtn} 
+                variant="primary" 
+                size="sm"
+                className="transform hover:scale-105 transition-all duration-300"
+              />
+              <Button 
+                text={aboutArray.secondaryBtn} 
+                variant="outline" 
+                size="sm"
+                className="border-gray-300 text-gray-700 hover:border-primary hover:text-primary transform hover:scale-105 transition-all duration-300"
+              />
             </motion.div>
-          </div>
-        </motion.div>
+
+            {/* Quick Stats */}
+            <motion.div
+              className="grid grid-cols-3 gap-6 max-w-md"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6 }}
+            >
+              {aboutArray.stats.map((stat, index) => (
+                <div key={index} className="text-center lg:text-left">
+                  <div className="text-2xl font-bold text-primary">{stat.number}</div>
+                  <div className="text-gray-600 text-sm">{stat.label}</div>
+                </div>
+              ))}
+            </motion.div>
+          </motion.div>
+
+          {/* Right Side - Feature Cards */}
+          <motion.div
+            className="grid grid-cols-2 gap-6"
+            initial={{ opacity: 0, x: 50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+          >
+            {aboutArray.features.map((feature, index) => {
+              const IconComponent = feature.icon;
+              return (
+                <motion.div
+                  key={index}
+                  className="bg-white rounded-2xl p-6 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300"
+                  whileHover={{ y: -5 }}
+                  transition={{ delay: index * 0.1 }}
+                >
+                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
+                    <IconComponent className="text-primary text-xl" />
+                  </div>
+                  <h3 className="font-semibold text-gray-900 mb-2">{feature.title}</h3>
+                  <p className="text-gray-600 text-sm">{feature.description}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
       </div>
     </section>
   );

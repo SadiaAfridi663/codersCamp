@@ -1,11 +1,44 @@
+// src/Data/AboutArray.js
+import { FaRocket, FaShieldAlt, FaBolt, FaCode } from "react-icons/fa";
+
 export const aboutArray = {
+  topText: "About BitCoderLabs",
   heading: "Building Modern & Innovative Digital Solutions",
-  subHeading:
-    "We design and develop powerful, scalable, and user-friendly web solutions to elevate your business in the digital world.",
+  subHeading: "We design and develop powerful, scalable, and user-friendly web solutions to elevate your business in the digital world.",
   primaryBtn: "Get Started",
   secondaryBtn: "Learn More",
   textBtn: "Empowering Digital Growth",
-  image: "/images/sir aizaz.jpeg", // your existing image path
+  
+  // Feature Cards Data
+  features: [
+    {
+      icon: FaBolt,
+      title: "Fast Development",
+      description: "Quick and efficient project delivery",
+    },
+    {
+      icon: FaCode,
+      title: "Modern Tech",
+      description: "Latest technologies and frameworks",
+    },
+    {
+      icon: FaRocket,
+      title: "Scalable Solutions",
+      description: "Grow with your business needs",
+    },
+    {
+      icon: FaShieldAlt,
+      title: "Secure & Reliable",
+      description: "Robust and secure applications",
+    },
+  ],
+
+  // Stats Data
+  stats: [
+    { number: "50+", label: "Projects Done" },
+    { number: "3+", label: "Years Experience" },
+    { number: "30+", label: "Happy Clients" },
+  ],
 };
 // src/Data/AboutArray.js
 import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaGitAlt, FaGithub, FaAws, FaDocker } from "react-icons/fa";
@@ -24,7 +57,7 @@ export const technologies = [
 
   // Backend
   { name: "Node.js", icon: FaNodeJs, color: "#339933", category: "Backend" },
-  { name: "Express.js", icon: SiExpress, color: "#FFFFFF", category: "Backend" },
+  { name: "Express.js", icon: SiExpress, color: "#000000", category: "Backend" },
   { name: "MongoDB", icon: SiMongodb, color: "#47A248", category: "Backend" },
   { name: "MySQL", icon: SiMysql, color: "#4479A1", category: "Backend" },
 
