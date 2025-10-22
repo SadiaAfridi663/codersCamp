@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa";
 import { FiUsers, FiBarChart2, FiBookOpen } from "react-icons/fi";
 import Button from "../../UI/Button";
+import { Link } from "react-router-dom";
 
 export default function CourseCard({
   course,
@@ -73,14 +74,14 @@ export default function CourseCard({
           <Button
             icon={
               <FaHeart
-                className={`w-4 h-4 ${
+                className={`w-4 h-7 ${
                   course.isWishlisted
                     ? "text-red-500"
                     : "text-gray-600 hover:text-red-500"
                 }`}
               />
             }
-            size="sm"
+            size="xxs"
             variant="wishlist"
             rounded="full"
             onClick={() => onWishlist?.(course)}
@@ -88,11 +89,11 @@ export default function CourseCard({
 
           <Button
             icon={
-              <FaShare className="w-4 h-4  text-gray-600 hover:text-primary" />
+              <FaShare className="w-4 h-6   text-gray-600 hover:text-primary" />
             }
             rounded="full"
             variant="share"
-            size="sm"
+            size="xs"
             onClick={() => onShare?.(course)}
           />
         </div>
@@ -227,6 +228,7 @@ export default function CourseCard({
                   onClick={() => {}}
                 />
               )}
+              <Link to="/prices">
               <Button
                 icon={<FaShoppingCart className="w-4 h-4" />}
                 text={course.price === 0 ? "Enroll Free" : "Add to Cart"}
@@ -235,6 +237,7 @@ export default function CourseCard({
                 variant={layout === "list" ? "outline" : "primary"}
                 onClick={() => {}}
               />
+              </Link>
             </div>
           </div>
         </div>

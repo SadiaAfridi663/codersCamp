@@ -27,6 +27,7 @@ export default function Categories() {
           data={CategoriesArray.concat(CategoriesArray)} // duplicate for smooth loop
           slidesPerView={4}
           renderSlide={(cat) => <CategoriesCards {...cat} />}
+          spaceBetween={30}
         />
 
         {/* CTA Buttons */}

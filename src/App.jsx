@@ -10,6 +10,7 @@ import Courses from "./Pages/Cources";
 import About from "./Pages/About";
 import Prices from "./Pages/Prices";
 import Contact from "./Pages/Contact";
+import CourseDetailPage from "./Pages/CourseDetailPage";
 
 
 
@@ -35,6 +36,7 @@ useEffect(() => {
         <Route path="/about" element={<About />} />
         <Route path="/prices" element={<Prices />} />
         <Route path="/contact" element={<Contact />} />
+        <Route path="/course/:id" element={<CourseDetailPage />} />
         
       </Routes>
       <Footer/>

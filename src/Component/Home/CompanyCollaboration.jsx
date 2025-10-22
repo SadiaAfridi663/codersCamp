@@ -31,7 +31,7 @@ export default function CompanyCollaboration() {
         <div className="relative">
           <CustomSlider
             data={companies.concat(companies)}
-            slidesPerView={4}
+            slidesPerView={5}
             renderSlide={(company) => <CompanyCard company={company} />}
           />
         </div>

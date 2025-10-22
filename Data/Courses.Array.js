@@ -1,4 +1,3 @@
-
 import course1 from "../images/course1.jpeg";
 import course2 from "../images/course2.jpeg";
 import course3 from "../images/course3.jpeg";
@@ -186,7 +185,6 @@ export const dummyCourses = [
   },
 ];
 
-
 // src/Data/filterData.js
 
 export const categories = [
@@ -212,3 +210,162 @@ export const features = [
   "Downloadable Resources",
   "Lifetime Access",
 ];
+
+/////////////////////////////////// course detail
+
+import SirDawood from "../images/sir dawood.jpg";
+export const courseData = {
+  title: "Advanced Web Development",
+  tagline: "Master modern web technologies and build scalable applications",
+  duration: "12 weeks",
+  level: "Intermediate",
+  students: "2,500+",
+  price: "$299",
+  originalPrice: "$499",
+  badges: ["Bestseller", "Hot & New", "Trending"],
+  rating: "4.8",
+  reviews: "1,200",
+  instructor: {
+    name: "Mian Dawood",
+    role: "Senior Full Stack Developer",
+    avatar: SirDawood,
+  },
+  features: [
+    "48 hours of video content",
+    "12 real-world projects",
+    "Certificate of completion",
+    "Lifetime access",
+  ],
+};
+
+export const stats = [
+  { label: "Success Rate", value: "98%" },
+  { label: "Support", value: "24/7" },
+  { label: "Hiring Partners", value: "500+" },
+  { label: "Mentorship", value: "1-on-1" },
+];
+
+// Key benefits
+export const benefits = [
+  "Hands-on projects and real-world applications",
+  "Expert instruction from industry professionals",
+  "Lifetime access to course materials and updates",
+  "Community support and peer learning",
+  "Career guidance and portfolio building",
+  "Certificate of completion",
+];
+
+
+// Syllabus data
+export   const Syllabus = {
+    total:[
+      {title:"modules",value:8},
+      {title:"lessons",value:72},
+      {title:"duration",value:"48 hours"},
+      {title:"projects",value:12}
+    ],
+    modules: [
+      {
+        id: 1,
+        title: "Frontend Foundations",
+        description: "Master the core concepts of modern frontend development",
+        duration: "6 hours",
+        lessons: 8,
+        progress: 100,
+        lessonsList: [
+          { name: "HTML5 & Semantic Web", duration: "45 min", type: "video", completed: true },
+          { name: "Advanced CSS3 & Flexbox", duration: "1 hour", type: "video", completed: true },
+          { name: "CSS Grid Layout", duration: "1.5 hours", type: "video", completed: true },
+          { name: "Responsive Design Principles", duration: "1 hour", type: "video", completed: true },
+          { name: "CSS Variables & Custom Properties", duration: "45 min", type: "video", completed: true },
+          { name: "Modern CSS Frameworks", duration: "1 hour", type: "video", completed: true },
+          { name: "Building a Portfolio Layout", duration: "2 hours", type: "project", completed: true },
+          { name: "Module 1 Quiz", duration: "30 min", type: "quiz", completed: true }
+        ]
+      },
+      {
+        id: 2,
+        title: "JavaScript Fundamentals",
+        description: "Deep dive into modern JavaScript concepts and patterns",
+        duration: "8 hours",
+        lessons: 10,
+        progress: 100,
+        lessonsList: [
+          { name: "ES6+ Syntax & Features", duration: "1 hour", type: "video", completed: true },
+          { name: "Functions & Scope", duration: "1.5 hours", type: "video", completed: true },
+          { name: "Arrays & Objects Methods", duration: "2 hours", type: "video", completed: true },
+          { name: "Async JavaScript & Promises", duration: "2 hours", type: "video", completed: true },
+          { name: "Modern Array Methods", duration: "1 hour", type: "video", completed: true },
+          { name: "DOM Manipulation", duration: "1.5 hours", type: "video", completed: true },
+          { name: "Event Handling", duration: "1 hour", type: "video", completed: true },
+          { name: "Building a Todo Application", duration: "3 hours", type: "project", completed: true },
+          { name: "JavaScript Challenges", duration: "1 hour", type: "exercise", completed: true },
+          { name: "Module 2 Quiz", duration: "30 min", type: "quiz", completed: true }
+        ]
+      },
+      {
+        id: 3,
+        title: "React & Modern Frameworks",
+        description: "Build dynamic applications with React and state management",
+        duration: "12 hours",
+        lessons: 14,
+        progress: 75,
+        lessonsList: [
+          { name: "React Components & JSX", duration: "1.5 hours", type: "video", completed: true },
+          { name: "Props & State Management", duration: "2 hours", type: "video", completed: true },
+          { name: "Hooks & Functional Components", duration: "2.5 hours", type: "video", completed: true },
+          { name: "Context API & Global State", duration: "2 hours", type: "video", completed: true },
+          { name: "React Router & Navigation", duration: "1.5 hours", type: "video", completed: true },
+          { name: "Building a E-commerce Cart", duration: "4 hours", type: "project", completed: true },
+          { name: "Performance Optimization", duration: "1.5 hours", type: "video", completed: false },
+          { name: "Testing React Applications", duration: "2 hours", type: "video", completed: false },
+          { name: "Deployment Strategies", duration: "1 hour", type: "video", completed: false }
+        ]
+      },
+      {
+        id: 4,
+        title: "Backend Development",
+        description: "Server-side development with Node.js and databases",
+        duration: "10 hours",
+        lessons: 12,
+        progress: 50,
+        lessonsList: [
+          { name: "Node.js Fundamentals", duration: "1.5 hours", type: "video", completed: true },
+          { name: "Express.js Framework", duration: "2 hours", type: "video", completed: true },
+          { name: "RESTful API Design", duration: "2 hours", type: "video", completed: true },
+          { name: "Database Design & SQL", duration: "2 hours", type: "video", completed: true },
+          { name: "MongoDB & NoSQL", duration: "1.5 hours", type: "video", completed: false },
+          { name: "Authentication & Security", duration: "2 hours", type: "video", completed: false }
+        ]
+      },
+      {
+        id: 5,
+        title: "Advanced Concepts",
+        description: "Master advanced patterns and architecture",
+        duration: "6 hours",
+        lessons: 8,
+        progress: 0,
+        lessonsList: [
+          { name: "Microservices Architecture", duration: "1.5 hours", type: "video", completed: false },
+          { name: "GraphQL APIs", duration: "2 hours", type: "video", completed: false },
+          { name: "WebSockets & Real-time", duration: "1.5 hours", type: "video", completed: false }
+        ]
+      }
+    ]
+  };
+
+  export const feature = [
+    "Lifetime access",
+    "Certificate included",
+    "Beginner friendly",
+    "Project-based learning"
+  ];
+  export const topics = [
+    
+            "HTML5 & Semantics",
+            "CSS3 & Flexbox",
+            "JavaScript ES6+",
+            "Responsive Design",
+            "Git & GitHub",
+            "Deployment",
+          ]

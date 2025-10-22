@@ -2,6 +2,7 @@ import heroimage from "../../assets/hero.avif";
 import Button from "../UI/Button";
 import Input from "../UI/Input";
 import HeroRight from "./HeroRight";
+import { Link } from "react-router-dom";
 
 const HeroSection = ({ title, SubTitle }) => {
   return (
@@ -24,12 +25,16 @@ const HeroSection = ({ title, SubTitle }) => {
         </p>
 
         {/* Search */}
-        <Input type="text" placeholder="enter text here" />
+        <Input type="text"  placeholder="enter text here" />
 
         {/* CTA Buttons */}
-        <div className="flex  gap-4 justify-center items-center">
-          <Button text="Browse Course" />
+        <div className="flex  gap-4 justify-center items-center mt-12">
+          <Link to="/courses">
+          <Button text=" Explore Courses" variant="primary" />
+          </Link>
+          <Link to="/signup">
           <Button text=" Start Learning for Free" variant="outline" />
+          </Link>
         </div>
       </div>
 

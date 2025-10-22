@@ -1,5 +1,4 @@
 import React from "react";
-// import { Filter, LayoutGrid, List } from "lucide-react"; // 👈 Import professional icons
 import { FaFilter, FaThLarge, FaList } from "react-icons/fa";
 
 
@@ -11,7 +10,7 @@ export default function Button({
   rounded = "full",
   onClick,
   className = "",
-  type = "buttonType", // 👈 optional custom type for filter/list/grid
+  type = "buttonType", //  optional custom type for filter/list/grid
 }) {
   const base =
     "flex items-center justify-center gap-2 font-semibold transition-all duration-300";
@@ -23,12 +22,15 @@ export default function Button({
     link: "text-[#3baee9] hover:text-primary-dark bg-transparent shadow-none",
     square:
       "bg-primary text-white rounded-md hover:bg-primary-dark shadow-md",
+    
+    squarefull:"bg-primary text-white rounded-xl hover:bg-primary-dark shadow-md w-full",
+
     squareOutline:
       "bg-white text-primary border-2 border-primary rounded-md hover:bg-gray-50 shadow-md",
     wishlist:
-      "p-2 bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
+      " bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
     share:
-      "p-2 bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
+      " bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
 
     // 👇 new button styles
     filter:
@@ -39,7 +41,9 @@ export default function Button({
       "p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
   };
 
+
   const sizes = {
+    xxs: "text-[10px] px-1 py-0.5",
     xs: "text-xs px-2 py-1",
     sm: "text-sm px-4 py-2",
     md: "text-base px-6 py-3",

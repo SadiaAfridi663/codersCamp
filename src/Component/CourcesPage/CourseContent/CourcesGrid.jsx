@@ -4,6 +4,7 @@ import { dummyCourses } from "../../../../Data/Courses.Array";
 import Button from "../../UI/Button";
 import { FaGraduationCap, FaFilter, FaThLarge, FaList } from "react-icons/fa";
 import Filter from "../Filter/FIlter";
+import { Link } from "react-router-dom";  
 
 export default function CourseGrid() {
   const [layout, setLayout] = useState("grid");
@@ -13,7 +14,7 @@ export default function CourseGrid() {
     <section className="bg-gray-50 py-10 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 relative">
         {/* ===== Header ===== */}
-        <div className="flex justify-between items-center mb-8">
+        <div className="flex justify-between items-center mb-8 lg:mr-9">
           <h2 className="text-2xl font-bold text-gray-800 flex items-center gap-2">
             <FaGraduationCap className="text-primary text-4xl" />
             Available Courses
@@ -24,9 +25,9 @@ export default function CourseGrid() {
             <Button
               variant="outline"
               size="xs"
-              icon={<FaFilter className="w-5 h-7 "  />}
+              icon={<FaFilter className="w-5 h-7 " />}
               onClick={() => setShowFilter(!showFilter)}
-              className={`rounded-full transition-all duration-300 ${
+              className={`rounded-full cursor-pointer transition-all duration-300 ${
                 showFilter ? "bg-gray-200" : "bg-white"
               }`}
             />
@@ -38,9 +39,9 @@ export default function CourseGrid() {
                 size="xs"
                 icon={
                   layout === "grid" ? (
-                    <FaList className="w-5 h-7 " />
+                    <FaList className="w-5 h-7 cursor-pointer" />
                   ) : (
-                    <FaThLarge className="w-5 h-7 " />
+                    <FaThLarge className="w-5 h-7 cursor-pointer" />
                   )
                 }
                 onClick={() =>
@@ -53,39 +54,41 @@ export default function CourseGrid() {
         </div>
 
         {/* ===== Main Section ===== */}
-        <div className="flex gap-8 items-start transition-all duration-500 ease-in-out">
-          {/* Left: Courses */}
-          <div className="flex-1 transition-all duration-500">
-            <div
-              className={
-                layout === "grid"
-                  ? `grid gap-6 ${
-                      showFilter
-                        ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
-                        : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
-                    }`
-                  : "space-y-6"
-              }
-            >
-              {dummyCourses.map((course) => (
-                <CourseCard key={course.id} course={course} layout={layout} />
-              ))}
+        <Link to="/course/:id">
+          <div className="flex gap-8 items-start transition-all duration-500 ease-in-out">
+            {/* Left: Courses */}
+            <div className="flex-1 transition-all duration-500">
+              <div
+                className={
+                  layout === "grid"
+                    ? `grid gap-6 ${
+                        showFilter
+                          ? "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
+                          : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-4"
+                      }`
+                    : "space-y-6"
+                }
+              >
+                {dummyCourses.map((course) => (
+                  <CourseCard key={course.id} course={course} layout={layout} />
+                ))}
+              </div>
             </div>
-          </div>
 
-          {/* Right: Filter (visible on large screen only) */}
-          <div
-            className={`hidden lg:block transition-all duration-500 ease-in-out transform ${
-              showFilter
-                ? "opacity-100 translate-x-0 w-80"
-                : "opacity-0 -translate-x-10 w-0 overflow-hidden"
-            }`}
-          >
-            <div className="sticky top-24">
-              <Filter />
+            {/* Right: Filter (visible on large screen only) */}
+            <div
+              className={`hidden lg:block transition-all duration-500 ease-in-out transform ${
+                showFilter
+                  ? "opacity-100 translate-x-0 w-80"
+                  : "opacity-0 -translate-x-10 w-0 overflow-hidden"
+              }`}
+            >
+              <div className="sticky top-24">
+                <Filter />
+              </div>
             </div>
           </div>
-        </div>
+        </Link>
       </div>
 
       {/*  Mobile Filter Drawer */}

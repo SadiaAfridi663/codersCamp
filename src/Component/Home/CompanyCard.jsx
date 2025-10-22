@@ -6,11 +6,11 @@ export default function CompanyCard({ company }) {
       key={company.id}
       className="group w-[200px] relative bg-white rounded-2xl shadow-sm hover:shadow-xl border border-gray-100 p-5 flex flex-col items-center text-center transition-all duration-500 hover:-translate-y-1 hover:bg-white/90 mb-10">
       {/* Company Logo */}
-      <div className="w-24 h-24 bg-gray-50 rounded-xl flex items-center justify-center mb-3 group-hover:bg-[#e8f7ff] transition-colors duration-300">
+      <div className="w-24 h-24  rounded-xl flex items-center justify-center mb-3  transition-colors duration-300">
         <img
           src={company.logo}
           alt={company.name}
-          className="w-20 h-20 object-cover filter grayscale group-hover:grayscale-0 transition-all duration-300"
+          className="w-20 h-20 object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
         />
       </div>
 

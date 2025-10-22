@@ -11,6 +11,7 @@ export default function CustomSlider({
   loop = true,
   autoplay = true,
   pagination = true,
+  spaceBetween = 0,
 }) {
   return (
     <Swiper
@@ -19,7 +20,7 @@ export default function CustomSlider({
       centeredSlides={true}
       grabCursor={true}
       slidesPerView={1}
-      spaceBetween={30}
+      spaceBetween={spaceBetween}
       speed={4000}
       autoplay={
         autoplay
