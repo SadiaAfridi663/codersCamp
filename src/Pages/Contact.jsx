@@ -1,9 +1,14 @@
 import React from 'react'
+import ContactHero from '../Component/ContactUs/ContactHero'
+import ContactForm from '.././Component/ContactUs/Form/ContactForm'
+import Map from '../Component/UI/Map'
 
 function Contact() {
   return (
     <div>
-      contact
+      <ContactHero />
+      <ContactForm />
+      <Map />
     </div>
   )
 }
