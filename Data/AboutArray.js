@@ -7,7 +7,6 @@ export const aboutArray = {
   subHeading: "We design and develop powerful, scalable, and user-friendly web solutions to elevate your business in the digital world.",
   primaryBtn: "Get Started",
   secondaryBtn: "Learn More",
-  textBtn: "Empowering Digital Growth",
   
   // Feature Cards Data
   features: [

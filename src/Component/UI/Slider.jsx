@@ -16,7 +16,7 @@ export default function CustomSlider({
   return (
     <Swiper
       modules={[Autoplay, Pagination]}
-      loop={loop}
+      loop={data.length > slidesPerView && loop}
       centeredSlides={true}
       grabCursor={true}
       slidesPerView={1}
@@ -41,6 +41,7 @@ export default function CustomSlider({
       }
       breakpoints={{
         640: { slidesPerView: 2 },
+        768: { slidesPerView: 5 },
         1024: { slidesPerView },
       }}
       onSlideChange={(swiper) => {
