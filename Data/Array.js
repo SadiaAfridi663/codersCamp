@@ -7,7 +7,7 @@ import {
   FaShieldAlt,
   FaBullhorn,
   FaBriefcase,
-  FaPython,FaChartBar, FaPalette, FaRobot
+  FaPython,FaChartBar, FaPalette, FaRobot,FaLaptopCode, FaChartLine,
 } from "react-icons/fa";
 
 export const Right = [
@@ -24,59 +24,129 @@ export const recommendations = [
   { id: 3, title: "UI/UX Design", icon: "fas fa-palette" },
 ];
 
-export const popularCourses = [
-  {
-    id: 1,
-    title: "JavaScript for Beginners",
-    desc: "Learn the basics of JavaScript, the most popular programming language in web development.",
-    icon: FaCode,
-    courseCount: "12 Courses",
-    duration: "6 Weeks"
-  },
-  {
-    id: 2,
-    title: "Data Science with Python",
-    desc: "Master data analysis, visualization, and machine learning using Python.",
-    icon: FaChartBar,
-    courseCount: "8 Courses", 
-    duration: "8 Weeks"
-  },
-  {
-    id: 3,
-    title: "UI/UX Design Fundamentals",
-    desc: "Design beautiful and user-friendly digital experiences.",
-    icon: FaPalette,
-    courseCount: "6 Courses",
-    duration: "4 Weeks"
-  },
-  {
-    id: 4,
-    title: "Machine Learning A-Z",
-    desc: "A comprehensive guide to machine learning algorithms and techniques.",
-    icon: FaRobot,
-    courseCount: "10 Courses",
-    duration: "10 Weeks"
-  },
-];
-
 export const FilterButtons = [
   {
     id: "popular",
     text: "Most Popular",
     variant: "square",
-    onClick: () => console.log("Most Popular clicked"),
   },
   {
     id: "trending",
     text: "New & Trending",
     variant: "squareOutline",
-    onClick: () => console.log("New & Trending clicked"),
   },
   {
     id: "career",
     text: "Career Paths",
     variant: "squareOutline",
-    onClick: () => console.log("Career Paths clicked"),
+  },
+];
+
+// Most Popular Courses
+export const popularCourses = [
+  {
+    id: 1,
+    title: "Web Development",
+    desc: "Master HTML, CSS, JavaScript and modern frameworks like React",
+    courseCount: "24 Courses",
+    duration: "3 Months",
+    icon: FaCode,
+  },
+  {
+    id: 2,
+    title: "Data Science",
+    desc: "Python, ML, data analysis and visualization with real projects",
+    courseCount: "18 Courses",
+    duration: "4 Months",
+    icon: FaChartBar,
+  },
+  {
+    id: 3,
+    title: "Digital Marketing",
+    desc: "SEO, social media marketing, and growth strategies",
+    courseCount: "16 Courses",
+    duration: "2 Months",
+    icon: FaBullhorn,
+  },
+  {
+    id: 4,
+    title: "Python Programming",
+    desc: "From basics to advanced applications and automation",
+    courseCount: "20 Courses",
+    duration: "3 Months",
+    icon: FaPython,
+  },
+];
+
+// New & Trending Courses
+export const trendingCourses = [
+  {
+    id: 1,
+    title: "AI & Machine Learning",
+    desc: "ChatGPT, neural networks, and AI model development",
+    courseCount: "12 Courses",
+    duration: "5 Months",
+    icon: FaRobot,
+  },
+  {
+    id: 2,
+    title: "Cloud Computing",
+    desc: "AWS, Azure, Docker and Kubernetes deployment",
+    courseCount: "11 Courses",
+    duration: "3 Months",
+    icon: FaCloud,
+  },
+  {
+    id: 3,
+    title: "Cybersecurity",
+    desc: "Ethical hacking, network security and threat protection",
+    courseCount: "8 Courses",
+    duration: "4 Months",
+    icon: FaShieldAlt,
+  },
+  {
+    id: 4,
+    title: "Mobile Development",
+    desc: "Flutter, React Native for cross-platform apps",
+    courseCount: "14 Courses",
+    duration: "3 Months",
+    icon: FaMobileAlt,
+  },
+];
+
+// Career Path Courses
+export const careerCourses = [
+  {
+    id: 1,
+    title: "Full Stack Developer",
+    desc: "End-to-end web development career path",
+    courseCount: "30 Courses",
+    duration: "6 Months",
+    icon: FaLaptopCode,
+  },
+  {
+    id: 2,
+    title: "Data Analyst",
+    desc: "Complete data analysis and visualization career",
+    courseCount: "15 Courses",
+    duration: "4 Months",
+    icon: FaChartLine,
+  },
+  {
+    id: 3,
+    title: "UX/UI Designer",
+    desc: "Design thinking and interface design career",
+    courseCount: "12 Courses",
+    duration: "3 Months",
+    icon: FaPalette,
+  },
+  {
+    id: 4,
+    title: "DevOps Engineer",
+    desc: "Infrastructure, CI/CD and cloud operations",
+    courseCount: "18 Courses",
+    duration: "5 Months",
+    icon: FaServer,
   },
 ];
 // src/Data/Array.js (or wherever you keep it)
