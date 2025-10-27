@@ -16,7 +16,7 @@ export default function CategoriesCards({
       />
 
       {/* Icon */}
-      <div
+      <div 
         className={`w-14 h-14 mb-5 rounded-2xl bg-gradient-to-r ${color} flex items-center justify-center text-white text-xl group-hover:scale-110 transition-transform`}
       >
         <Icon />
