@@ -15,7 +15,7 @@ export default function DownloadSection() {
             Download the complete syllabus and start your journey to becoming an
             expert today
           </p>
-          <button className="px-12 py-4 bg-white border-2 border-primary-dark text-primary-dark rounded-2xl font-bold hover:bg-primary-dark  hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-3 mx-auto group text-lg">
+          <button className="lg:px-12 px-3 py-4 bg-white border-2 border-primary-dark text-primary-dark rounded-2xl font-bold hover:bg-primary-dark  hover:text-white transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 flex items-center gap-3 mx-auto group lg:text-lg text-sm">
             <FaDownload className="group-hover:animate-bounce" />
             Download Complete Syllabus
           </button>

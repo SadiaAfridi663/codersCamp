@@ -17,7 +17,7 @@ const socialLinks = FooterLink.socialLinks;
 
 export default function ContactInfo() {
   return (
-    <div className="lg:w-80 space-y-6">
+    <div className="lg:w-80 space-y-6 w-full flex-shrink-0">
       {/* Contact Card */}
       <div className="bg-white rounded-2xl p-6 shadow-xl border border-blue-200">
         <h3 className="text-xl font-bold text-gray-900 mb-6 flex items-center lg:ml-4 gap-2">

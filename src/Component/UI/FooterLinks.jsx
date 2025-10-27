@@ -66,20 +66,20 @@ export default function FooterSection() {
           </p>
         </div>
 
-        {/* 💬 Customer Support Box */}
-        <div className="bg-gradient-to-r from-[#e8f7ff] to-[#d9f2ff] p-6 rounded-2xl shadow-sm border border-[#bde8ff]/50">
-          <div className="flex items-center gap-3 mb-3">
-            <FaIcons.FaHeadset className="text-[#3baee9] text-2xl" />
-            <h4 className="text-gray-900 font-semibold text-base">
+        {/*  Customer Support Box */}
+        <div className="bg-gradient-to-r from-[#e8f7ff] to-[#d9f2ff] lg:p-6 p-3 rounded-2xl shadow-sm border border-[#bde8ff]/50">
+          <div className="flex items-center  gap-3 mb-3">
+            <FaIcons.FaHeadset className="text-[#3baee9] lg:text-2xl text-xl" />
+            <h4 className="text-gray-900 font-semibold lg:text-base text-sm">
               Customer Support
             </h4>
           </div>
-          <p className="text-gray-600 text-sm mb-3">
+          <p className="text-gray-600 text-xs mb-3">
             Need help? Our support team is available <b>24/7</b> to assist you.
           </p>
           <a
             href={`tel:${contact.phone}`}
-            className="inline-flex items-center gap-2 text-sm font-medium text-white bg-[#3baee9] hover:bg-[#2a9fd8] transition-all px-4 py-2 rounded-lg"
+            className="inline-flex items-center gap-2 lg:text-sm text-xs font-medium text-white bg-[#3baee9] hover:bg-[#2a9fd8] transition-all lg:px-4 px-2 lg:py-2 py-1 rounded-lg"
           >
             <FaIcons.FaPhoneAlt className="text-white" />
             Call Now

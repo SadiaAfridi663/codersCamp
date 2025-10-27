@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 const HeroSection = ({ title, SubTitle }) => {
   return (
     <section
-      className="relative flex flex-col md:flex-row items-center justify-around overflow-hidden px-10 pb-10 bg-cover bg-center bg-no-repeat"
+      className=" relative flex flex-col md:flex-row items-center lg:justify-around  overflow-hidden px-10 pb-10 bg-cover bg-center bg-no-repeat lg:pt-0 pt-10 "
       style={{ backgroundImage: `url(${heroimage})` }}
     >
       {/* Overlay */}
@@ -24,18 +24,36 @@ const HeroSection = ({ title, SubTitle }) => {
           {SubTitle}
         </p>
 
-        {/* Search */}
-        <Input type="text"  placeholder="enter text here" />
+        {/* Search Input */}
+        <div className="flex justify-center lg:justify-center lg:mb-8 mb-4 w-full">
+          <Input
+            type="text"
+            placeholder="Enter text here"
+            className="w-full max-w-xl text-sm sm:text-base"
+          />
+        </div>
 
         {/* CTA Buttons */}
-        <div className="flex  gap-4 justify-center items-center mt-12">
-          <Link to="/courses">
-          <Button text=" Explore Courses" variant="primary" />
+        <div className="flex  lg:flex-row gap-4 justify-center  items-center mt-6">
+          <Link to="/courses" className="w-full sm:w-auto">
+            <Button
+              text="Explore Courses"
+              variant="primary"
+              size="md"
+              className="w-full sm:w-auto"
+            />
           </Link>
-          <Link to="/signup">
-          <Button text=" Start Learning for Free" variant="outline" />
+          <Link to="/signup" className="w-full sm:w-auto">
+            <Button
+              text="Free Demo"
+              variant="outline"
+              size="md"
+              className="w-full sm:w-auto"
+            />
           </Link>
         </div>
+
+        
       </div>
 
       {/* Right Section */}

@@ -1,77 +1,75 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { NavLink } from 'react-router-dom';
-import './Navbar.css'
+import React, { useState, useRef, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { Play, ArrowRight, Menu, X } from "lucide-react";
+import Button from "../UI/Button";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [activeLevel, setActiveLevel] = useState('beginner');
+  const [activeLevel, setActiveLevel] = useState("beginner");
   const [activeCourse, setActiveCourse] = useState(null);
   const coursesDropdownRef = useRef(null);
 
-  // Course data mapping
   const courseToSubcourses = {
-    'html-basics': 'html-basics-subcourses',
-    'intro-css': 'intro-css-subcourses',
-    'js-basics': 'js-basics-subcourses',
-    'git-basics': 'html-basics-subcourses',
-    'react-fundamentals': 'intro-css-subcourses',
-    'nodejs-basics': 'js-basics-subcourses',
-    'tailwind-projects': 'intro-css-subcourses',
-    'mongodb-basics': 'js-basics-subcourses',
-    'full-stack': 'full-stack-subcourses',
-    'api-integration': 'full-stack-subcourses',
-    'nextjs-advanced': 'full-stack-subcourses',
-    'microservices': 'full-stack-subcourses'
+    "html-basics": "html-basics-subcourses",
+    "intro-css": "intro-css-subcourses",
+    "js-basics": "js-basics-subcourses",
+    "git-basics": "html-basics-subcourses",
+    "react-fundamentals": "intro-css-subcourses",
+    "nodejs-basics": "js-basics-subcourses",
+    "tailwind-projects": "intro-css-subcourses",
+    "mongodb-basics": "js-basics-subcourses",
+    "full-stack": "full-stack-subcourses",
+    "api-integration": "full-stack-subcourses",
+    "nextjs-advanced": "full-stack-subcourses",
+    microservices: "full-stack-subcourses",
   };
 
-  // Course data
   const courseLevels = {
     beginner: [
-      { id: 'html-basics', name: 'HTML Basics' },
-      { id: 'intro-css', name: 'Intro to CSS' },
-      { id: 'js-basics', name: 'JavaScript Basics' },
-      { id: 'git-basics', name: 'Git Basics' }
+      { id: "html-basics", name: "HTML Basics" },
+      { id: "intro-css", name: "Intro to CSS" },
+      { id: "js-basics", name: "JavaScript Basics" },
+      { id: "git-basics", name: "Git Basics" },
     ],
     intermediate: [
-      { id: 'react-fundamentals', name: 'React Fundamentals' },
-      { id: 'nodejs-basics', name: 'Node.js Basics' },
-      { id: 'tailwind-projects', name: 'Tailwind CSS Projects' },
-      { id: 'mongodb-basics', name: 'MongoDB Basics' }
+      { id: "react-fundamentals", name: "React Fundamentals" },
+      { id: "nodejs-basics", name: "Node.js Basics" },
+      { id: "tailwind-projects", name: "Tailwind CSS Projects" },
+      { id: "mongodb-basics", name: "MongoDB Basics" },
     ],
     advanced: [
-      { id: 'full-stack', name: 'Full Stack Development' },
-      { id: 'api-integration', name: 'API Integration' },
-      { id: 'nextjs-advanced', name: 'Next.js Advanced' },
-      { id: 'microservices', name: 'Microservices Architecture' }
-    ]
+      { id: "full-stack", name: "Full Stack Development" },
+      { id: "api-integration", name: "API Integration" },
+      { id: "nextjs-advanced", name: "Next.js Advanced" },
+      { id: "microservices", name: "Microservices Architecture" },
+    ],
   };
 
-  // Subcourse data
   const subcourses = {
-    'html-basics-subcourses': [
-      { name: 'HTML Structure & Syntax' },
-      { name: 'Forms & Inputs' },
-      { name: 'Semantic HTML' },
-      { name: 'HTML5 Features' }
+    "html-basics-subcourses": [
+      { name: "HTML Structure & Syntax" },
+      { name: "Forms & Inputs" },
+      { name: "Semantic HTML" },
+      { name: "HTML5 Features" },
     ],
-    'intro-css-subcourses': [
-      { name: 'CSS Selectors' },
-      { name: 'Box Model' },
-      { name: 'Flexbox' },
-      { name: 'CSS Grid' }
+    "intro-css-subcourses": [
+      { name: "CSS Selectors" },
+      { name: "Box Model" },
+      { name: "Flexbox" },
+      { name: "CSS Grid" },
     ],
-    'js-basics-subcourses': [
-      { name: 'Variables & Data Types' },
-      { name: 'Functions & Scope' },
-      { name: 'DOM Manipulation' },
-      { name: 'Event Handling' }
+    "js-basics-subcourses": [
+      { name: "Variables & Data Types" },
+      { name: "Functions & Scope" },
+      { name: "DOM Manipulation" },
+      { name: "Event Handling" },
     ],
-    'full-stack-subcourses': [
-      { name: 'Frontend Development' },
-      { name: 'Backend Development' },
-      { name: 'Database Integration' },
-      { name: 'Deployment Strategies' }
-    ]
+    "full-stack-subcourses": [
+      { name: "Frontend Development" },
+      { name: "Backend Development" },
+      { name: "Database Integration" },
+      { name: "Deployment Strategies" },
+    ],
   };
 
   const handleLevelHover = (level) => {
@@ -87,242 +85,261 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
-  // Close mobile menu when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (mobileMenuOpen && !event.target.closest('#mobile-menu') && !event.target.closest('#menu-btn')) {
+      if (
+        mobileMenuOpen &&
+        !event.target.closest("#mobile-menu") &&
+        !event.target.closest("#menu-btn")
+      ) {
         setMobileMenuOpen(false);
       }
     };
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [mobileMenuOpen]);
 
-  // Navigation links
-  const navLinks = [
-    { path: '/', name: 'Home' },
-    { path: '/about', name: 'About' },
-    { path: '/prices', name: 'Prices' },
-    { path: '/contact', name: 'Contact' }
-  ];
-
   return (
-    <div className="max-w-7xl w-full bg-white shadow-lg mx-auto">
-      <header className="flex justify-between items-center lg:px-8 px-2 lg:py-4 py-2 bg-white shadow-md relative">
+    <div className="w-full bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
+      <header className="max-w-7xl mx-auto flex justify-between items-center lg:px-8 px-4 lg:py-4 py-3 bg-white relative z-50">
         {/* Logo */}
-        <div className="flex items-center space-x-3">
-         
-          <NavLink 
-            to="/" 
-            className="lg:text-2xl text-lg font-bold text-gray-800 hover:no-underline"
+        <div className="flex items-center">
+          <NavLink
+            to="/"
+            className="text-2xl font-bold text-gray-900 hover:no-underline tracking-tight"
           >
-            Bit<span className="text-[#4481b8]">CoderLabs</span>
+            Bit<span className="text-primary-dark">CoderLabs</span>
           </NavLink>
         </div>
-        
+
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex space-x-10">
-            <li  className="group">
-                <NavLink 
-                  to='/'
-                  className={({ isActive }) => 
-                    `text-gray-700 font-semibold hover:text-[#4481b8] transition-colors duration-300 relative py-2 ${
-                      isActive ? 'text-[#4481b8]' : ''
-                    }`
-                  }
-                >
-                  Home
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4481b8] transition-all duration-300 group-hover:w-full"></span>
-                </NavLink>
-              </li>
-            
-            
-            {/* Courses Dropdown */}
-            <li className="courses-dropdown relative" style={{ position: 'static' }} ref={coursesDropdownRef}>
-              <NavLink 
-                to="/courses"
-                className={({ isActive }) => 
-                // text-gray-700 font-semibold hover:text-[#4481b8] transition-colors duration-300 relative py-2 flex items-center
-                  ` text-gray-700 font-semibold hover:text-[#4481b8] transition-colors duration-300 relative py-2 
-                   ${ 
-                    isActive ? 'text-[#4481b8]' : ''
+        <nav className="hidden lg:flex items-center space-x-1">
+          <div className="group relative px-3 py-2">
+            <NavLink
+              to="/"
+              className={({ isActive }) =>
+                `font-medium transition-all duration-300 relative py-2 px-1 ${
+                  isActive
+                    ? "text-primary-dark"
+                    : "text-gray-700 hover:text-primary-dark"
+                }`
+              }
+            >
+              Home
+              <span
+                className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary-dark transition-all duration-300 ${
+                  window.location.pathname === "/"
+                    ? "scale-x-100"
+                    : "scale-x-0 group-hover:scale-x-100"
+                }`}
+              ></span>
+            </NavLink>
+          </div>
+
+          {/* Courses Dropdown */}
+          <div
+            className="courses-dropdown group relative px-3 py-2"
+            ref={coursesDropdownRef}
+          >
+            <NavLink
+              to="/courses"
+              className={({ isActive }) =>
+                `font-medium transition-all duration-300 relative py-2 px-1 flex items-center gap-1 ${
+                  isActive
+                    ? "text-primary-dark"
+                    : "text-gray-700 hover:text-primary-dark"
+                }`
+              }
+            >
+              Courses
+              <svg
+                className="w-3 h-3 transition-transform duration-300 group-hover:rotate-180"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-dark scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
+            </NavLink>
+
+            {/* Dropdown */}
+            <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 w-[800px] opacity-0 invisible -translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+              <div className="flex h-[400px]">
+                {/* Level Column */}
+                <div className="w-1/4 bg-white p-6 border-r border-gray-200 overflow-y-auto rounded-l-xl">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide">
+                    Course Levels
+                  </h3>
+                  <ul className="space-y-1">
+                    {["beginner", "intermediate", "advanced"].map((level) => (
+                      <li key={level} className="level-item group/level">
+                        <button
+                          className={`w-full text-left p-3 rounded-lg transition-all duration-200 flex items-center justify-between border ${
+                            activeLevel === level
+                              ? "bg-primary-dark text-white shadow-md"
+                              : "text-gray-700 border-transparent hover:bg-white hover:border-blue-200 hover:text-blue-600 hover:shadow-sm"
+                          }`}
+                          onMouseEnter={() => handleLevelHover(level)}
+                        >
+                          <span className="capitalize font-medium text-sm">
+                            {level}
+                          </span>
+                          <ArrowRight className="w-3 h-3 opacity-0 group-hover/level:opacity-100 transition-opacity duration-200" />
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                {/* Course Column */}
+                <div className="w-2/5 p-6 border-r border-gray-200 overflow-y-auto">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide">
+                    Courses
+                  </h3>
+                  <div className="space-y-1">
+                    {courseLevels[activeLevel]?.map((course) => (
+                      <div key={course.id} className="course-item group/course">
+                        <button
+                          className="w-full text-left p-3 rounded-lg text-gray-700 border border-transparent hover:bg-primary-dark hover:text-white cursor-pointer hover:border-white transition-all duration-200 flex items-center justify-between"
+                          onMouseEnter={() => handleCourseHover(course.id)}
+                        >
+                          <span className="font-medium text-sm">
+                            {course.name}
+                          </span>
+                          <ArrowRight className="w-3 h-3 opacity-0 group-hover/course:opacity-100 transition-opacity duration-200" />
+                        </button>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Subcourse Column */}
+                <div className="w-2/5 p-6 overflow-y-auto rounded-r-xl">
+                  <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide">
+                    Lessons
+                  </h3>
+                  {!activeCourse ? (
+                    <div className="text-gray-400 text-sm italic text-center py-8">
+                      Select a course to view lessons
+                    </div>
+                  ) : (
+                    <div className="space-y-2">
+                      {subcourses[courseToSubcourses[activeCourse]]?.map(
+                        (subcourse, index) => (
+                          <div
+                            key={index}
+                            className="p-3 rounded-lg hover:bg-blue-50 transition-all duration-200 flex items-center cursor-pointer group/lesson border border-transparent hover:border-blue-200"
+                          >
+                            <div className="w-8 h-8 bg-blue-100 rounded-lg flex items-center justify-center mr-3 group-hover/lesson:bg-primary-dark transition-colors duration-200">
+                              <Play className="w-4 h-4 text-primary-dark group-hover/lesson:text-white transition-colors duration-200" />
+                            </div>
+                            <span className="text-sm font-medium text-gray-700 group-hover/lesson:text-primary-dark transition-colors duration-200">
+                              {subcourse.name}
+                            </span>
+                          </div>
+                        )
+                      )}
+                    </div>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Other Links */}
+          {["about", "prices", "contact"].map((item) => (
+            <div key={item} className="group relative px-3 py-2">
+              <NavLink
+                to={`/${item}`}
+                className={({ isActive }) =>
+                  `font-medium transition-all duration-300 relative py-2 px-1 ${
+                    isActive
+                      ? "text-primary-dark"
+                      : "text-gray-700 hover:text-primary-dark"
                   }`
                 }
               >
-                Courses
-                <i className="fas fa-chevron-down ml-1 text-xs"></i>
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4481b8] transition-all duration-300 group-hover:w-full"></span>
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary-dark transition-all duration-300 ${
+                    window.location.pathname === `/${item}`
+                      ? "scale-x-100"
+                      : "scale-x-0 group-hover:scale-x-100"
+                  }`}
+                ></span>
               </NavLink>
-
-              {/* Dropdown Content */}
-              <div className="dropdown-content absolute left-0 right-0 top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 mx-auto w-[800px] opacity-0 invisible -translate-y-2 transition-all duration-300 courses-dropdown:hover:opacity-100 courses-dropdown:hover:visible courses-dropdown:hover:translate-y-0">
-                <div className="flex h-[400px]">
-                  {/* Left Column - Course Levels */}
-                  <div className="w-1/4 bg-gray-50 p-6 border-r border-gray-200 overflow-y-auto rounded-l-xl">
-                    <h3 className="font-semibold text-gray-700 mb-4">Course Levels</h3>
-                    <ul className="space-y-2">
-                      {['beginner', 'intermediate', 'advanced'].map((level) => (
-                        <li key={level} className="level-item group/level">
-                          <button
-                            className={`w-full text-left p-2 rounded-lg transition-all duration-200 flex items-center justify-between ${
-                              activeLevel === level
-                                ? 'bg-[#4481b8] text-white'
-                                : 'text-gray-700 hover:bg-blue-100 hover:text-[#4481b8]'
-                            }`}
-                            onMouseEnter={() => handleLevelHover(level)}
-                          >
-                            <span className="capitalize">{level}</span>
-                            <i className="fas fa-chevron-right text-xs opacity-0 group-hover/level:opacity-100 transition-opacity duration-200"></i>
-                          </button>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                  
-                  {/* Middle Column - Courses */}
-                  <div className="w-2/5 p-6 border-r border-gray-200 overflow-y-auto">
-                    <h3 className="font-semibold text-gray-700 mb-4">Courses</h3>
-                    <div className="space-y-2">
-                      {courseLevels[activeLevel]?.map((course) => (
-                        <div key={course.id} className="course-item group/course">
-                          <button
-                            className="w-full text-left p-2 rounded-lg text-gray-700 hover:bg-blue-50 hover:text-[#4481b8] transition-all duration-200 flex items-center justify-between"
-                            onMouseEnter={() => handleCourseHover(course.id)}
-                          >
-                            <span>{course.name}</span>
-                            <i className="fas fa-chevron-right text-xs opacity-0 group-hover/course:opacity-100 transition-opacity duration-200"></i>
-                          </button>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  {/* Right Column - Subcourses */}
-                  <div className="w-2/5 p-6 overflow-y-auto rounded-r-xl">
-                    <h3 className="font-semibold text-gray-700 mb-4">Lessons</h3>
-                    
-                    {!activeCourse ? (
-                      <div className="text-gray-500 italic"></div>
-                    ) : (
-                      <div className="space-y-2">
-                        {subcourses[courseToSubcourses[activeCourse]]?.map((subcourse, index) => (
-                          <div
-                            key={index}
-                            className="p-2 rounded-lg hover:bg-blue-50 transition-colors duration-200 flex items-center cursor-pointer"
-                          >
-                            <i className="fas fa-play-circle text-[#4481b8] mr-3"></i>
-                            <span>{subcourse.name}</span>
-                          </div>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </li>
-
-            <li  className="group">
-                <NavLink 
-                  to='/about'
-                  className={({ isActive }) => 
-                    `text-gray-700 font-semibold hover:text-[#4481b8] transition-colors duration-300 relative py-2 ${
-                      isActive ? 'text-[#4481b8]' : ''
-                    }`
-                  }
-                >
-                  About
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4481b8] transition-all duration-300 group-hover:w-full"></span>
-                </NavLink>
-              </li>
-           
-            <li  className="group">
-                <NavLink 
-                  to='/prices'
-                  className={({ isActive }) => 
-                    `text-gray-700 font-semibold hover:text-[#4481b8] transition-colors duration-300 relative py-2 ${
-                      isActive ? 'text-[#4481b8]' : ''
-                    }`
-                  }
-                >
-                  Prices
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4481b8] transition-all duration-300 group-hover:w-full"></span>
-                </NavLink>
-              </li>
-               <li  className="group">
-                <NavLink 
-                  to='/contact'
-                  className={({ isActive }) => 
-                    `text-gray-700 font-semibold hover:text-[#4481b8] transition-colors duration-300 relative py-2 ${
-                      isActive ? 'text-[#4481b8]' : ''
-                    }`
-                  }
-                >
-                  Contact
-                  <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#4481b8] transition-all duration-300 group-hover:w-full"></span>
-                </NavLink>
-              </li>
-          </ul>
+            </div>
+          ))}
         </nav>
-        
+
         {/* Buttons */}
-        <div className="flex items-center space-x-4">
-          <button className="hidden md:block px-5 py-2 border border-[#4481b8] text-[#4481b8] font-semibold rounded-full hover:bg-blue-50 transition-colors duration-300">
-            Login
-          </button>
-          <button className="px-5 py-2 bg-[#4481b8] text-white font-semibold rounded-full hover:bg-[#4481b8] transition-colors duration-300 shadow-md hover:shadow-lg shrink-0">
-            Join Now
-          </button>
-          {/* Hamburger Menu */}
+        <div className="flex items-center space-x-3">
+          <div className="hidden sm:flex items-center space-x-3">
+            <Button variant="outline" size="md" text="Sign Up" />
+            <Button text="Join Now" />
+          </div>
+
+          {/* Mobile Menu Toggle */}
           <button
             id="menu-btn"
-            className="md:hidden text-gray-700 hover:text-[#4481b8] focus:outline-none"
+            className="lg:hidden text-gray-700 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-blue-50"
             onClick={handleMobileMenuToggle}
           >
-            <i className="fas fa-bars text-xl"></i>
+            {mobileMenuOpen ? (
+              <X className="w-6 h-6" />
+            ) : (
+              <Menu className="w-6 h-6" />
+            )}
           </button>
         </div>
       </header>
-      
+
+      {/* Overlay Background */}
+      {mobileMenuOpen && (
+        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
+      )}
+
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`md:hidden bg-blue-50 p-4 transition-all duration-300 ease-in-out ${
-          mobileMenuOpen ? 'block' : 'hidden'
+        className={`fixed top-[64px] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform ${
+          mobileMenuOpen
+            ? "translate-y-0 opacity-100"
+            : "-translate-y-10 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col space-y-4 text-center">
-          {navLinks.map((link) => (
+        <div className="flex flex-col space-y-0 p-4">
+          {["/", "/courses", "/about", "/prices", "/contact"].map((path) => (
             <NavLink
-              key={link.path}
-              to={link.path}
+              key={path}
+              to={path}
               className={({ isActive }) =>
-                `text-gray-700 font-semibold hover:text-[#4481b8] transition-colors ${
-                  isActive ? 'text-[#4481b8]' : ''
+                `py-3 px-4 font-medium rounded-lg transition-all duration-300 ${
+                  isActive
+                    ? "bg-primary-dark text-white shadow-md"
+                    : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
                 }`
               }
               onClick={() => setMobileMenuOpen(false)}
             >
-              {link.name}
+              {path === "/"
+                ? "Home"
+                : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
             </NavLink>
           ))}
-          <NavLink
-            to="/courses"
-            className={({ isActive }) =>
-              `text-gray-700 font-semibold hover:text-[#4481b8] transition-colors ${
-                isActive ? 'text-[#4481b8]' : ''
-              }`
-            }
-            onClick={() => setMobileMenuOpen(false)}
-          >
-            Courses
-          </NavLink>
-          <button className="px-5 py-2 border border-[#4481b8] text-[#4481b8] font-semibold rounded-full hover:bg-blue-50 transition-colors duration-300">
-            Login
-          </button>
+          <div className="flex space-x-3 pt-2">
+            <Button text="Sign In" variant="squarefull" />
+            <Button text="Join Now" variant="squarefull" />
+          </div>
         </div>
       </div>
     </div>

@@ -3,8 +3,9 @@ import { Right, recommendations } from "../../../Data/Array";
 
 export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
   return (
-    <div className="relative z-10 mt-10 bg-white/90 border border-gray-200 shadow-xl rounded-2xl p-4 max-w-[370px] w-full ml-8 backdrop-blur-sm">
+    <div className=" lg:mr-0 mr-9 relative z-10 mt-10 bg-white/90 border border-gray-200 shadow-xl rounded-2xl p-4 max-w-[370px] w-full ml-8 backdrop-blur-sm">
       
+
       {/* Course Level */}
       <div className="bg-gradient-to-r from-primary/5 to-primary/10 rounded-lg p-3 mb-4">
         <h2 className="text-lg font-bold text-gray-800 mb-3">{Righttitle}</h2>
@@ -23,7 +24,7 @@ export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
           <span className="text-primary font-bold">→</span>
         </div>
       </div>
-
+      
       {/* Progress Card */}
       <div className="bg-white border border-gray-100 rounded-lg p-3 mb-4 shadow-sm">
         <div className="flex justify-between items-center mb-2">
@@ -38,7 +39,7 @@ export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
           <span>10,000 goal</span>
         </div>
       </div>
-
+      
       {/* Recommendation Card */}
       <div className="bg-gradient-to-br from-primary to-primary-dark text-white rounded-lg p-4 shadow-lg">
         <div className="flex items-center justify-between mb-3">
@@ -47,7 +48,7 @@ export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
             <span className="font-bold text-sm">A+</span>
           </div>
         </div>
-
+        
         <div className="space-y-2">
           {recommendations.map(({ id, icon, title }) => (
             <div key={id} className="flex items-center gap-2 bg-white/10 rounded-md p-2">
@@ -58,7 +59,7 @@ export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
             </div>
           ))}
         </div>
-
+        
         <button className="w-full mt-3 bg-white text-primary py-2 rounded-md font-semibold text-sm hover:bg-gray-100 transition">
           View All Courses
         </button>

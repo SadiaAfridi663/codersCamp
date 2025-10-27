@@ -54,9 +54,10 @@ export default function CourseGrid() {
         </div>
 
         {/* ===== Main Section ===== */}
-        <Link to="/course/:id">
+        
           <div className="flex gap-8 items-start transition-all duration-500 ease-in-out">
             {/* Left: Courses */}
+            <Link to="/course/:id">
             <div className="flex-1 transition-all duration-500">
               <div
                 className={
@@ -74,7 +75,7 @@ export default function CourseGrid() {
                 ))}
               </div>
             </div>
-
+            </Link>
             {/* Right: Filter (visible on large screen only) */}
             <div
               className={`hidden lg:block transition-all duration-500 ease-in-out transform ${
@@ -88,7 +89,7 @@ export default function CourseGrid() {
               </div>
             </div>
           </div>
-        </Link>
+        
       </div>
 
       {/*  Mobile Filter Drawer */}

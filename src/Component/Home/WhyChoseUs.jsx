@@ -10,7 +10,7 @@ import image from "../../../images/whychoseUs.avif"
 
 export default function WhyChooseUs() {  
   return (
-    <section className="py-20 bg-gradient-to-br from-[#0a192f] via-[#112d4e] to-[#3baee9]/10 relative overflow-hidden">
+    <section className="lg:py-20 py-8 bg-gradient-to-br from-[#0a192f] via-[#112d4e] to-[#3baee9]/10 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */} 
@@ -117,11 +117,16 @@ export default function WhyChooseUs() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center gap-8">
+        <div className="text-center lg:mt-16 mt-8">
+          <div className=" hidden sm:inline-flex items-center gap-8">
             <Button text=" Start Free Trial " size="lg" />
             <Button text="Schedule Demo" variant="outline" size="lg" />
           </div>
+          <div className="sm:hidden inline-flex items-center gap-4">
+            <Button text=" Start Free Trial " size="md" />
+            <Button text="Schedule Demo" variant="outline" size="md" />
+          </div>
+
         </div>
       </div>
     </section>

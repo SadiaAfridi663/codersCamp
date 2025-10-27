@@ -40,9 +40,10 @@ export default function CustomSlider({
           : false
       }
       breakpoints={{
-        640: { slidesPerView: 2 },
-        768: { slidesPerView: 5 },
-        1024: { slidesPerView },
+        0: { slidesPerView: 1.2 }, 
+        480: { slidesPerView: 2 }, 
+        768: { slidesPerView: 3 }, 
+        1024: { slidesPerView }, 
       }}
       onSlideChange={(swiper) => {
         const slides = swiper.slides;

@@ -1,9 +1,8 @@
 import React from "react";
 import Button from "../../UI/Button";
 import CategoriesCards from "./CategoriesCards";
-import {CategoriesArray} from "../../../../Data/Array";
+import { CategoriesArray } from "../../../../Data/Array";
 import CustomSlider from "../../UI/Slider";
-
 
 export default function Categories() {
   return (
@@ -24,10 +23,16 @@ export default function Categories() {
 
         {/* 🔹 Reusable Slider */}
         <CustomSlider
-          data={CategoriesArray.concat(CategoriesArray)} // duplicate for smooth loop
-          slidesPerView={4}
+          data={CategoriesArray.concat(CategoriesArray)}
           renderSlide={(cat) => <CategoriesCards {...cat} />}
           spaceBetween={30}
+          breakpoints={{
+            0: { slidesPerView: 1.2 }, // mobile (1-2 cards)
+            480: { slidesPerView: 2 }, // small devices
+            768: { slidesPerView: 3 }, // tablets (medium)
+            1024: { slidesPerView: 4 }, // laptops
+            1280: { slidesPerView: 5 }, // large desktops (optional)
+          }}
         />
 
         {/* CTA Buttons */}
@@ -38,8 +43,8 @@ export default function Categories() {
 
         {/* Trust Badge */}
         <p className="mt-5 text-gray-500 text-sm">
-          Trusted by{" "}
-          <span className="font-bold text-gray-800">50,000+</span> learners worldwide.
+          Trusted by <span className="font-bold text-gray-800">50,000+</span>{" "}
+          learners worldwide.
         </p>
       </div>
     </section>

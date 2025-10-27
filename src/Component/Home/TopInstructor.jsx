@@ -90,10 +90,10 @@ export default function TopInstructors() {
               </div>
 
               {/* Content Section */}
-              <div className="flex-1 max-w-2xl mx-4 lg:mx-0" >
+              <div className="flex-1 max-w-2xl mx-4 lg:mx-0">
                 <div className="space-y-6">
                   {/* Name & Title */}
-                  <div >
+                  <div>
                     <h3 className="text-3xl font-bold text-gray-900 mb-3">
                       {instructor.name}
                     </h3>
@@ -155,9 +155,25 @@ export default function TopInstructors() {
                   </div>
 
                   {/* CTA Buttons */}
-                  <div className="flex gap-4 pt-4">
-                    <Button text="View Profile" rounded="lg" />
-                    <Button text="Courses" variant="outline" rounded="lg" />
+                  <div className=" lg:mt-2 mt-8">
+                    <div className=" hidden sm:inline-flex items-center gap-8">
+                      <Button text=" Start Free Trial "  rounded="lg" size="md" />
+                      <Button
+                        text="Schedule Demo"
+                        variant="outline"
+                        size="md"
+                        rounded="lg"
+                      />
+                    </div>
+                    <div className="sm:hidden inline-flex items-center gap-4">
+                      <Button text=" Start Free Trial " size="sm" rounded="lg" />
+                      <Button
+                        text="Schedule Demo"
+                        variant="outline"
+                        size="sm"
+                        rounded="lg"
+                      />
+                    </div>
                   </div>
                 </div>
               </div>
