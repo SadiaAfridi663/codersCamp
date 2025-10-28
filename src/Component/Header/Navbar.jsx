@@ -282,11 +282,14 @@ const Navbar = () => {
         </nav>
 
         {/* Buttons */}
-        <div className="flex items-center space-x-3">
-          <div className="hidden sm:flex items-center space-x-3">
-            <Button variant="outline" size="smheader" text="Sign Up" />
-            <Button text="Join Now" size="sm" />
+        <div className="flex items-center gap-3">
+          {/* Buttons for large and medium screens */}
+          <div className="hidden sm:flex items-center gap-3">
+            <Button variant="outline" size="sm" text="Sign Up" />
+            <Button size="sm" text="Join Now" />
           </div>
+
+          
 
           {/* Mobile Menu Toggle */}
           <button
@@ -337,7 +340,7 @@ const Navbar = () => {
             </NavLink>
           ))}
           <div className="flex space-x-3 pt-2">
-            <Button text="Sign In" variant="squarefull"  />
+            <Button text="Sign In" variant="squarefull" />
             <Button text="Join Now" variant="squarefull" />
           </div>
         </div>

@@ -18,7 +18,7 @@ export default function FeaturedCoursesCategories({ activeFilter }) {
   const filteredCourses = getFilteredCourses();
 
   return (
-    <div className="bg-gradient-to-br from-gray-300 via-gray-100 to-blue-200 mx-7 rounded-2xl overflow-visible border border-gray-200 shadow-sm"> 
+    <div className="bg-gradient-to-br from-gray-300 via-gray-100 to-blue-200 lg:mx-7 mx-4 rounded-2xl overflow-visible border border-gray-200 shadow-sm"> 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 p-5 gap-6">
         {filteredCourses.map((course) => {
           const Icon = course.icon; 
