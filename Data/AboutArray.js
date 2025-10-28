@@ -76,4 +76,61 @@ export const technologies = [
 ];
 
 export const techCategories = ["All", "Frontend", "Backend", "Advanced", "Cloud"];
+export const instructorsData = [
+  {
+    id: 1,
+    name: "Mian Aizaz",
+    role: "Senior Frontend Developer",
+    bio: "8+ years building scalable React applications. Former lead at TechCorp with expertise in modern web technologies.",
+    image: "images/sir aizaz.jpeg",
+    skills: ["React Js", "Next Js", "TS", "Php"],
+    social: {
+      github: "#",
+      linkedin: "https://www.linkedin.com/in/mian-aizaz-92a690172/"
+    },
+    portfolio: "https://sarahchen.dev"
+  },
+  {
+    id: 2,
+    name: "Mian Dawood",
+    role: "Senior Full Stack Web Developer",
+    bio: "Specialized in MERN stack with focus on performance optimization and scalable architecture design.",
+    image: "images/sir dawood.jpg",
+    skills: ["Express",
+      "APIS Specialist",
+      "AI & Machine Learning Integration",
+      "Laravel",],
+    social: {
+      github: "https://github.com/marcusrod",
+      linkedin: "https://www.linkedin.com/in/miandawoodshah/"
+    },
+    portfolio: "https://marcusrodriguez.com"
+  },
+  {
+    id: 3,
+    name: "Emily Watson",
+    role: "UI/UX Engineer",
+    bio: "Creating beautiful, accessible user interfaces with modern design systems and user-centered approach.",
+    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80",
+    skills: ["Figma", "Tailwind", "Framer", "CSS", "Design Systems"],
+    social: {
+      github: "https://github.com/emilywatson",
+      linkedin: "https://linkedin.com/in/emilywatson"
+    },
+    portfolio: "https://emilywatson.design"
+  },
+  {
+    id: 4,
+    name: "Alex Thompson",
+    role: "DevOps Specialist",
+    bio: "Cloud infrastructure expert with focus on AWS, containerization, and CI/CD pipeline optimization.",
+    image: "https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=500&h=600&q=80",
+    skills: ["AWS", "Docker", "Kubernetes", "CI/CD", "Terraform"],
+    social: {
+      github: "https://github.com/alexthompson",
+      linkedin: "https://linkedin.com/in/alexthompson"
+    },
+    portfolio: "https://alexthompson.dev"
+  }
+];
 
