@@ -46,6 +46,7 @@ export default function Button({
     xxs: "text-[10px] px-1 py-0.5",
     xs: "text-xs px-2 py-1",
     sm: "text-sm px-4 py-2",
+    smheader: "text-sm px-3 py-1",
     md: "text-base px-6 py-3",
     lg: "text-lg px-8 py-4",
   };

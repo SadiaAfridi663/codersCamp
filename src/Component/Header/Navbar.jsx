@@ -104,7 +104,7 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
-      <header className="max-w-7xl mx-auto flex justify-between items-center lg:px-8 px-4 lg:py-4 py-3 bg-white relative z-50">
+      <header className="max-w-7xl mx-auto flex justify-between items-center lg:px-8 px-4 lg:py-2 py-3 bg-white relative z-50">
         {/* Logo */}
         <div className="flex items-center">
           <NavLink
@@ -284,8 +284,8 @@ const Navbar = () => {
         {/* Buttons */}
         <div className="flex items-center space-x-3">
           <div className="hidden sm:flex items-center space-x-3">
-            <Button variant="outline" size="md" text="Sign Up" />
-            <Button text="Join Now" />
+            <Button variant="outline" size="smheader" text="Sign Up" />
+            <Button text="Join Now" size="sm" />
           </div>
 
           {/* Mobile Menu Toggle */}
@@ -337,7 +337,7 @@ const Navbar = () => {
             </NavLink>
           ))}
           <div className="flex space-x-3 pt-2">
-            <Button text="Sign In" variant="squarefull" />
+            <Button text="Sign In" variant="squarefull"  />
             <Button text="Join Now" variant="squarefull" />
           </div>
         </div>
