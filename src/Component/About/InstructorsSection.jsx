@@ -27,7 +27,7 @@ export default function InstructorsSection() {
   };
 
   return (
-    <section className="w-full bg-gradient-to-br from-primary-light via-white to-blue-50 py-20 px-6 relative overflow-hidden">
+    <section className="w-full bg-gradient-to-br from-primary-light via-white to-blue-50 py-20 px-4 md:px-8 relative overflow-hidden">
 
       <div className="max-w-7xl mx-auto relative z-10">
         {/* Header */}

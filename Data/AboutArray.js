@@ -134,3 +134,40 @@ export const instructorsData = [
   }
 ];
 
+
+export const processSteps = [
+  {
+    iconName: "FaBullseye", // React Icon name
+    title: "Strategy & Discovery",
+    description: "Deep dive into your business goals and technical requirements to create a perfect roadmap",
+    duration: "1-2 weeks",
+    videoId: "dQw4w9WgXcQ" // Use real YouTube ID
+  },
+  {
+    iconName: "FaUsers",
+    title: "Design & Prototyping",
+    description: "Create stunning UI/UX designs with interactive prototypes for your approval",
+    duration: "2-3 weeks",
+    videoId: "dQw4w9WgXcQ"
+  },
+  {
+    iconName: "FaPlay", 
+    title: "Development Sprint",
+    description: "Agile development with weekly demos, continuous integration and transparent progress",
+    duration: "4-6 weeks",
+    videoId: "dQw4w9WgXcQ"
+  },
+  {
+    iconName: "FaCheckCircle",
+    title: "Testing & Launch",
+    description: "Comprehensive testing across devices and smooth deployment with post-launch support",
+    duration: "1-2 weeks",
+    videoId: "dQw4w9WgXcQ"
+  }
+];
+
+export const quickStats = [
+  { value: '50+', label: 'Projects' },
+  { value: '98%', label: 'Success Rate' },
+  { value: '24/7', label: 'Support' }
+];
