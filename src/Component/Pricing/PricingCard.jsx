@@ -16,7 +16,7 @@ const PricingCard = ({ plan, isYearly, isHovered, calculateMonthlyEquivalent }) 
   return (
     <div
       className={`relative h-full transform transition-all duration-500 ${
-        isHovered ? "scale-105" : "scale-100"
+        isHovered ? "-translate-y-2.5" : "translate-y-0"
       } ${
         plan.popular 
           ? "shadow-2xl ring-4 ring-[#4481b8]/20" 
