@@ -18,7 +18,7 @@ export default function CourseCategory({ expanded, toggleSection, selectedFilter
             label={category}
             selected={selectedFilters.category.includes(category)}
             onClick={() => updateFilter("category", category)}
-            count={Math.floor(Math.random() * 15) + 3}
+            // count={Math.floor(Math.random() * 15) + 3}
           />
         ))}
       </div>

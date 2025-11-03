@@ -4,14 +4,12 @@ import Button from "../../UI/Button";
 
 export default function LessonItem({ lesson }) {
   return (
-    <div className="group/lesson bg-white rounded-xl border-2 border-gray-100 hover:border-blue-300 p-6 transition-all duration-300 hover:shadow-md">
-      <div className="flex items-center justify-between">
+    <div className="group/lesson bg-white rounded-xl border-2 border-gray-100 hover:border-primary lg:px-4 px-2 lg:py-3 py-1 transition-all duration-300 hover:shadow-md">
+      <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-4">
-          {/* <div className="p-3 rounded-xl border-2 text-primary bg-primary-light transition-transform duration-300 group-hover/lesson:scale-110">
-            {lesson.icon && <lesson.icon className="text-lg" />}
-          </div> */}
+          
           <div>
-            <h4 className="text-lg font-semibold text-gray-900 group-hover/lesson:text-blue-600 transition-colors">
+            <h4 className="lg:text-md text-md font-semibold text-gray-900 group-hover/lesson:text-primary-dark transition-colors">
               {lesson.name}
             </h4>
             <div className="flex items-center gap-4 mt-2">
@@ -25,14 +23,19 @@ export default function LessonItem({ lesson }) {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-3">
+        <div className="flex flex-col lg:flex-row items-center gap-3">
           {lesson.completed && (
-            <span className="px-4 py-2 bg-white text-primary rounded-full text-sm font-medium flex items-center gap-2 border-1 border-primary-dark">
+            <span className=" px-4 py-2 bg-white text-primary rounded-full lg:text-sm text-xs font-medium flex items-center gap-2 border-1 border-primary-dark">
               <FaCheck className="text-primary" />
               Completed
             </span>
           )}
-          <Button text="Start Lesson"  />
+          <div className="lg:hidden">
+            <Button text="Start Lesson"  size="sm"/>
+          </div>
+          <div className="hidden lg:block">
+            <Button text="Start Lesson" />
+          </div>
         </div>
       </div>
     </div>

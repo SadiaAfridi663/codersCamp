@@ -1,9 +1,10 @@
 import React from "react";
 import { Right, recommendations } from "../../../Data/Array";
+import { div } from "framer-motion/client";
 
 export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
   return (
-    <div className=" lg:mr-0 mr-9 relative z-10 mt-10 bg-white/90 border border-gray-200 shadow-xl rounded-2xl p-4 max-w-[370px] w-full ml-8 backdrop-blur-sm">
+    <div  className="hidden lg:block lg:mr-0 mr-9 relative z-10 mt-10 bg-white/90 border border-gray-200 shadow-xl rounded-2xl p-4 max-w-[370px] w-full ml-8 backdrop-blur-sm">
       
 
       {/* Course Level */}

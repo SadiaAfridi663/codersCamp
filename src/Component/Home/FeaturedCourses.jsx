@@ -29,9 +29,9 @@ export default function FeaturedCourses() {
   return (
     <div>
       <div className="md:flex justify-between items-center space-x-4 p-5">
-        <div className="max-w-7xl py-12">
+        <div className="max-w-7xl lg:py-12 py-7">
           {/* Title and Subtitle */}
-          <div className="sm:text-center md:text-left">
+          <div className="place-items-center">
             <h1 className="text-3xl lg:text-4xl font-bold text-gray-900">
               Featured Courses
             </h1>

@@ -228,10 +228,9 @@ export default function CourseCard({
                   onClick={() => {}}
                 />
               )}
-              <Link to="/prices">
+              <Link to="/course/:id">
               <Button
-                icon={<FaShoppingCart className="w-4 h-4" />}
-                text={course.price === 0 ? "Enroll Free" : "Add to Cart"}
+                text={course.price === 0 ? "Enroll Free" : "Explore Now"}
                 size="sm"
                 rounded="lg"
                 variant={layout === "list" ? "outline" : "primary"}

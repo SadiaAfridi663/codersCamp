@@ -16,25 +16,25 @@ export default function Button({
     "flex items-center justify-center gap-2 font-semibold transition-all duration-300";
 
   const variants = {
-    primary: "bg-primary text-white hover:bg-primary-dark shadow-lg",
+    primary: "cursor-pointer bg-primary text-white hover:bg-primary-dark shadow-lg",
     outline:
-      "bg-white text-primary border-2 border-primary hover:bg-gray-50 shadow-md",
-    link: "text-[#3baee9] hover:text-primary-dark bg-transparent shadow-none",
+      "cursor-pointer bg-white text-primary border border-primary hover:bg-gray-50 shadow-md",
+    link: "cursor-pointer text-[#3baee9] hover:text-primary-dark bg-transparent shadow-none",
     square:
-      "bg-primary text-white rounded-md hover:bg-primary-dark shadow-md",
+      "cursor-pointer bg-primary text-white rounded-md hover:bg-primary-dark shadow-md",
     
-    squarefull:"bg-primary text-white rounded-xl hover:bg-primary-dark shadow-md w-full",
+    squarefull:"cursor-pointer bg-primary text-white rounded-xl hover:bg-primary-dark shadow-md w-full",
 
     squareOutline:
-      "bg-white text-primary border-2 border-primary rounded-md hover:bg-gray-50 shadow-md",
+      "cursor-pointer bg-white text-primary border-2 border-primary rounded-md hover:bg-gray-50 shadow-md",
     wishlist:
-      " bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
+      "cursor-pointer bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
     share:
-      " bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
+      "cursor-pointer bg-white rounded-full shadow-lg hover:bg-white hover:scale-110 transition-all duration-300 cursor-pointer",
 
     // 👇 new button styles
     filter:
-      "p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
+      " p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
     list:
       "p-1 bg-white rounded-full shadow-lg hover:bg-gray-100 hover:scale-110 transition-all duration-300 cursor-pointer",
     grid:

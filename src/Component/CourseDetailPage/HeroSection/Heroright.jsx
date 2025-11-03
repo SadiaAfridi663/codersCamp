@@ -1,11 +1,30 @@
 import React from "react";
 import { courseData } from "../../../../Data/Courses.Array";
 import Button from "../../UI/Button";
-import { FaShieldAlt,FaBolt,FaLock,FaCreditCard } from "react-icons/fa";
-
-
+import { FaShieldAlt, FaBolt, FaLock, FaCreditCard } from "react-icons/fa";
+import { useAuth } from "../../Auth/AuthLogic"; // ✅ make sure path is correct
+import { useNavigate } from "react-router-dom";
 
 export default function Heroright() {
+  const { user } = useAuth();
+  const navigate = useNavigate();
+
+  const handleEnroll = () => {
+    if (!user) {
+      alert("Please login to enroll in the course.");
+      navigate("/login");
+      return;
+    }
+
+    if (courseData.price === 0) {
+      alert("Successfully enrolled in free course!");
+      navigate(`/course/${courseData.id || 1}/content`); // ✅ redirect to course content
+    } else {
+      alert("Redirecting to payment...");
+      navigate(`/Enroll/${courseData.id || 1}`); // ✅ redirect to payment page
+    }
+  };
+
   return (
     <div>
       {/* Right Content - Enhanced Course Card */}
@@ -20,7 +39,7 @@ export default function Heroright() {
               <span className="text-lg text-gray-400 line-through">
                 {courseData.originalPrice}
               </span>
-              <span className="px-2  bg-red-100 text-red-600 text-sm font-bold rounded-full">
+              <span className="px-2 bg-red-100 text-red-600 text-sm font-bold rounded-full">
                 40% OFF
               </span>
             </div>
@@ -28,15 +47,13 @@ export default function Heroright() {
           </div>
 
           {/* Course Summary Grid */}
-          <div className="space-y-6  mb-8">
+          <div className="space-y-6 mb-8">
             <div className="grid grid-cols-2 gap-4">
               <div className="text-center py-2 bg-gradient-to-br from-[#e8f7ff] to-white rounded-2xl border border-[#e8f7ff] hover:border-[#3baee9] transition-colors duration-300">
                 <div className="text-xl font-bold text-[#3baee9] ">
                   {courseData.duration}
                 </div>
-                <div className="text-gray-600 text-sm font-medium">
-                  Duration
-                </div>
+                <div className="text-gray-600 text-sm font-medium">Duration</div>
               </div>
               <div className="text-center py-2 bg-gradient-to-br from-[#e8f7ff] to-white rounded-2xl border border-[#e8f7ff] hover:border-[#3baee9] transition-colors duration-300">
                 <div className="text-xl font-bold text-[#3baee9] ">
@@ -51,22 +68,19 @@ export default function Heroright() {
                 <div className="text-xl font-bold text-[#3baee9] ">
                   {courseData.students}
                 </div>
-                <div className="text-gray-600 text-sm font-medium">
-                  Students
-                </div>
+                <div className="text-gray-600 text-sm font-medium">Students</div>
               </div>
               <div className="text-center py-2 bg-gradient-to-br from-[#e8f7ff] to-white rounded-2xl border border-[#e8f7ff] hover:border-[#3baee9] transition-colors duration-300">
                 <div className="text-xl font-bold text-[#3baee9] ">12</div>
-                <div className="text-gray-600 text-sm font-medium">
-                  Projects
-                </div>
+                <div className="text-gray-600 text-sm font-medium">Projects</div>
               </div>
             </div>
           </div>
 
-          {/*  Enrollment CTA */}
+          {/* Enrollment CTA */}
           <div className="space-y-4">
             <Button
+              onClick={handleEnroll}
               text={
                 courseData.price === 0
                   ? "Enroll Free"
@@ -74,13 +88,12 @@ export default function Heroright() {
               }
               variant="squarefull"
               size="lg"
-              
             />
 
             <div className="text-center space-y-3">
               <p className="text-gray-500 text-sm font-medium">
                 <FaShieldAlt className="inline-block mr-1 text-red-500" />
-                30-day money-back guarantee 
+                30-day money-back guarantee
               </p>
               <p className="text-gray-500 text-sm font-medium">
                 <FaBolt className="inline-block mr-1 text-yellow-500" />

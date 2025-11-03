@@ -82,7 +82,7 @@ export default function Filter() {
             {activeFiltersCount > 0 && (
               <button
                 onClick={clearFilters}
-                className="text-xs text-gray-400 hover:text-gray-600 font-medium transition-colors border-b border-transparent hover:border-gray-400"
+                className="text-xs text-gray-400 hover:text-gray-600 font-medium transition-colors border-b border-transparent hover:border-gray-400 cursor-pointer"
               >
                 Clear all
               </button>

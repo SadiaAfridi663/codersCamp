@@ -29,7 +29,7 @@ export default function ModuleCard({
       >
         {/* Header */}
         <div
-          className={`p-6 sm:p-8 cursor-pointer transition-all duration-300 bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-blue-100`}
+          className={` lg:px-4 px-2 lg:py-3 py-1 p-5 cursor-pointer transition-all duration-300 bg-gradient-to-r from-white to-blue-50 hover:from-blue-50 hover:to-blue-100`}
           onClick={() => toggleModule(module.id)}
         >
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6 lg:gap-0">
@@ -37,17 +37,17 @@ export default function ModuleCard({
             <div className="flex items-start lg:items-center gap-6 w-full lg:w-auto">
               <div className="relative flex-shrink-0">
                 <div
-                  className={`w-14 h-14 sm:w-16 sm:h-16 rounded-2xl flex items-center justify-center font-bold text-white text-xl shadow-lg bg-gradient-to-br from-primary to-primary-dark`}
+                  className={`lg:w-8 lg:h-8 w-6 h-6 rounded-lg flex items-center justify-center font-bold text-white text-xl shadow-lg bg-gradient-to-br from-primary to-primary-dark`}
                 >
                   {module.id}
                 </div>
               </div>
 
               <div className="flex-1">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-md lg:text-lg font-bold text-gray-900 mb-1">
                   {module.title}
                 </h3>
-                <p className="text-gray-600 text-base sm:text-lg mb-3 leading-snug">
+                <p className="text-gray-600 lg:text-md text-sm mb-1 leading-snug">
                   {module.description}
                 </p>
                 <div className="flex flex-wrap items-center gap-3 sm:gap-6 text-sm text-gray-500">

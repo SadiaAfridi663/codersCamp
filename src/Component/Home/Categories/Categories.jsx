@@ -36,7 +36,7 @@ export default function Categories() {
         />
 
         {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mt-8">
+        <div className="flex  justify-center items-center gap-4 mt-8">
           <Button text="Explore Paths" />
           <Button text="Get Guidance" variant="outline" />
         </div>

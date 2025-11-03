@@ -61,6 +61,7 @@ const HeroSection = ({ title, SubTitle }) => {
         Righttitle="Courses For Every Level"
         secondtital="Biggner To Advance"
         thirdtitle="Learning in process"
+       
       />
     </section>
   );

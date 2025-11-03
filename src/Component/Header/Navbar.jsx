@@ -1,13 +1,22 @@
 import React, { useState, useRef, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { Play, ArrowRight, Menu, X } from "lucide-react";
 import Button from "../UI/Button";
+import { useAuth } from "../Auth/AuthLogic";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeLevel, setActiveLevel] = useState("beginner");
   const [activeCourse, setActiveCourse] = useState(null);
   const coursesDropdownRef = useRef(null);
+  const location = useLocation();
+
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    setMobileMenuOpen(false);
+  };
 
   const courseToSubcourses = {
     "html-basics": "html-basics-subcourses",
@@ -85,6 +94,12 @@ const Navbar = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
+  const handleNavLinkClick = () => {
+    setMobileMenuOpen(false);
+    setActiveCourse(null);
+    setActiveLevel("beginner");
+  };
+
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (
@@ -95,12 +110,98 @@ const Navbar = () => {
         setMobileMenuOpen(false);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [mobileMenuOpen]);
+
+  // Mobile Courses Dropdown Component
+  const MobileCoursesDropdown = () => {
+    const [mobileActiveLevel, setMobileActiveLevel] = useState("beginner");
+    const [mobileActiveCourse, setMobileActiveCourse] = useState(null);
+
+    return (
+      <div className="space-y-4">
+        {/* Level Selection */}
+        <div>
+          <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+            Course Levels
+          </h3>
+          <div className="grid grid-cols-3 gap-2">
+            {["beginner", "intermediate", "advanced"].map((level) => (
+              <button
+                key={level}
+                className={`p-3 rounded-lg transition-all duration-200 border text-sm font-medium capitalize ${
+                  mobileActiveLevel === level
+                    ? "bg-primary-dark text-white border-primary-dark"
+                    : "bg-white text-gray-700 border-gray-300 hover:border-primary-dark hover:text-primary-dark"
+                }`}
+                onClick={() => {
+                  setMobileActiveLevel(level);
+                  setMobileActiveCourse(null);
+                }}
+              >
+                {level}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Courses List */}
+        <div>
+          <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+            Courses
+          </h3>
+          <div className="space-y-2">
+            {courseLevels[mobileActiveLevel]?.map((course) => (
+              <button
+                key={course.id}
+                className={`w-full text-left p-3 rounded-lg border transition-all duration-200 text-sm font-medium ${
+                  mobileActiveCourse === course.id
+                    ? "bg-primary-dark text-white border-primary-dark"
+                    : "bg-white text-gray-700 border-gray-300 hover:border-primary-dark hover:text-primary-dark"
+                }`}
+                onClick={() =>
+                  setMobileActiveCourse(
+                    mobileActiveCourse === course.id ? null : course.id
+                  )
+                }
+              >
+                {course.name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* Subcourses List */}
+        {mobileActiveCourse && (
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
+              Lessons
+            </h3>
+            <div className="space-y-2">
+              {subcourses[courseToSubcourses[mobileActiveCourse]]?.map(
+                (subcourse, index) => (
+                  <div
+                    key={index}
+                    className="p-3 rounded-lg bg-blue-50 border border-blue-200 transition-all duration-200 flex items-center"
+                  >
+                    <div className="w-8 h-8 bg-primary-dark rounded-lg flex items-center justify-center mr-3">
+                      <Play className="w-4 h-4 text-white" />
+                    </div>
+                    <span className="text-sm font-medium text-gray-700">
+                      {subcourse.name}
+                    </span>
+                  </div>
+                )
+              )}
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  };
 
   return (
     <div className="w-full bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
@@ -110,12 +211,13 @@ const Navbar = () => {
           <NavLink
             to="/"
             className="text-2xl font-bold text-gray-900 hover:no-underline tracking-tight"
+            onClick={handleNavLinkClick}
           >
             Bit<span className="text-primary-dark">CoderLabs</span>
           </NavLink>
         </div>
 
-        {/* Desktop Navigation */}
+        {/* Desktop Navigation - Unchanged */}
         <nav className="hidden lg:flex items-center space-x-1">
           <div className="group relative px-3 py-2">
             <NavLink
@@ -131,7 +233,7 @@ const Navbar = () => {
               Home
               <span
                 className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary-dark transition-all duration-300 ${
-                  window.location.pathname === "/"
+                  location.pathname === "/"
                     ? "scale-x-100"
                     : "scale-x-0 group-hover:scale-x-100"
                 }`}
@@ -168,7 +270,6 @@ const Navbar = () => {
                   d="M19 9l-7 7-7-7"
                 />
               </svg>
-              <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary-dark scale-x-0 transition-all duration-300 group-hover:scale-x-100"></span>
             </NavLink>
 
             {/* Dropdown */}
@@ -256,7 +357,7 @@ const Navbar = () => {
           </div>
 
           {/* Other Links */}
-          {["about", "prices", "contact"].map((item) => (
+          {["about", "Blog", "prices", "contact"].map((item) => (
             <div key={item} className="group relative px-3 py-2">
               <NavLink
                 to={`/${item}`}
@@ -271,7 +372,7 @@ const Navbar = () => {
                 {item.charAt(0).toUpperCase() + item.slice(1)}
                 <span
                   className={`absolute bottom-0 left-0 w-full h-0.5 bg-primary-dark transition-all duration-300 ${
-                    window.location.pathname === `/${item}`
+                    location.pathname === `/${item}`
                       ? "scale-x-100"
                       : "scale-x-0 group-hover:scale-x-100"
                   }`}
@@ -281,20 +382,46 @@ const Navbar = () => {
           ))}
         </nav>
 
-        {/* Buttons */}
-        <div className="flex items-center gap-3">
-          {/* Buttons for large and medium screens */}
-          <div className="hidden sm:flex items-center gap-3">
-            <Button variant="outline" size="sm" text="Sign Up" />
-            <Button size="sm" text="Join Now" />
+        {/* Desktop Auth Buttons - Unchanged */}
+        <div className="hidden lg:flex items-center gap-3">
+          {!user ? (
+            <>
+              <Link to="/register">
+                <Button text="Sign In" variant="outline" size="sm" />
+              </Link>
+              <Link to="/login">
+                <Button text="Log In" size="sm" />
+              </Link>
+            </>
+          ) : (
+            <div className="flex items-center gap-3">
+              <span className="medium text-gray-800 whitespace-nowrap text-primary">
+                Hi,&nbsp;{user.name || "User"}
+              </span>
+              <Button
+                text="Logout"
+                variant="squarefull"
+                size="sm"
+                onClick={handleLogout}
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Mobile: Show user name when logged in */}
+        {user && (
+          <div className="lg:hidden flex items-center">
+            <span className="font-medium text-gray-800 text-sm mr-3">
+               Hi, {user.name || "User"}
+            </span>
           </div>
+        )}
 
-          
-
-          {/* Mobile Menu Toggle */}
+        {/* Mobile Menu Button */}
+        <div className="lg:hidden">
           <button
             id="menu-btn"
-            className="lg:hidden text-gray-700 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-blue-50"
+            className="text-gray-700 hover:text-blue-600 transition-colors duration-300 p-2 rounded-lg hover:bg-blue-50"
             onClick={handleMobileMenuToggle}
           >
             {mobileMenuOpen ? (
@@ -306,45 +433,100 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Overlay Background */}
-      {mobileMenuOpen && (
-        <div className="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 transition-opacity duration-300"></div>
-      )}
-
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
-        className={`fixed top-[64px] left-0 right-0 bg-white border-t border-gray-200 shadow-lg z-50 transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] transform ${
-          mobileMenuOpen
-            ? "translate-y-0 opacity-100"
-            : "-translate-y-10 opacity-0 pointer-events-none"
+        className={`lg:hidden fixed top-0 left-0 right-0 bg-white shadow-xl z-40 transition-transform duration-300 ease-in-out ${
+          mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
+        style={{ marginTop: "64px" }} // Adjust based on your header height
       >
-        <div className="flex flex-col space-y-0 p-4">
-          {["/", "/courses", "/about", "/prices", "/contact"].map((path) => (
+        <div className="max-w-7xl mx-auto px-4 py-6">
+          {/* Mobile Navigation Links */}
+          <nav className="space-y-4 mb-6">
             <NavLink
-              key={path}
-              to={path}
+              to="/"
               className={({ isActive }) =>
-                `py-3 px-4 font-medium rounded-lg transition-all duration-300 ${
+                `block py-3 px-4 rounded-lg font-medium transition-all duration-200 border ${
                   isActive
-                    ? "bg-primary-dark text-white shadow-md"
-                    : "text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                    ? "bg-primary-dark text-white border-primary-dark"
+                    : "text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-primary-dark"
                 }`
               }
-              onClick={() => setMobileMenuOpen(false)}
+              onClick={handleNavLinkClick}
             >
-              {path === "/"
-                ? "Home"
-                : path.slice(1).charAt(0).toUpperCase() + path.slice(2)}
+              Home
             </NavLink>
-          ))}
-          <div className="flex space-x-3 pt-2">
-            <Button text="Sign In" variant="squarefull" />
-            <Button text="Join Now" variant="squarefull" />
+
+            {/* Mobile Courses Dropdown */}
+            <div className="py-3 px-4 rounded-lg border border-gray-200">
+              <MobileCoursesDropdown />
+            </div>
+
+            {["about", "prices", "contact"].map((item) => (
+              <NavLink
+                key={item}
+                to={`/${item}`}
+                className={({ isActive }) =>
+                  `block py-3 px-4 rounded-lg font-medium transition-all duration-200 border ${
+                    isActive
+                      ? "bg-primary-dark text-white border-primary-dark"
+                      : "text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-primary-dark"
+                  }`
+                }
+                onClick={handleNavLinkClick}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </NavLink>
+            ))}
+          </nav>
+
+          {/* Mobile Auth Buttons */}
+          <div className="space-y-3 pt-4 border-t border-gray-200">
+            {!user ? (
+              <>
+                <Link
+                  to="/register"
+                  className="block"
+                  onClick={handleNavLinkClick}
+                >
+                  <Button
+                    text="Sign In"
+                    variant="squarefull"
+                    className="w-full justify-center"
+                  />
+                </Link>
+                <Link
+                  to="/login"
+                  className="block"
+                  onClick={handleNavLinkClick}
+                >
+                  <Button
+                    text="Log In"
+                    variant="squarefull"
+                    className="w-full justify-center"
+                  />
+                </Link>
+              </>
+            ) : (
+              <Button
+                text="Logout"
+                variant="squarefull"
+                onClick={handleLogout}
+                className="w-full justify-center"
+              />
+            )}
           </div>
         </div>
       </div>
+
+      {/* Overlay */}
+      {mobileMenuOpen && (
+        <div
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 transition-opacity duration-300 lg:hidden"
+          onClick={() => setMobileMenuOpen(false)}
+        ></div>
+      )}
     </div>
   );
 };
