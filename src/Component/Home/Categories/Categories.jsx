@@ -3,10 +3,14 @@ import Button from "../../UI/Button";
 import CategoriesCards from "./CategoriesCards";
 import { CategoriesArray } from "../../../../Data/Array";
 import CustomSlider from "../../UI/Slider";
+// import { Link } from "lucide-react";
+import { Link } from "react-router-dom";
+import AutoScroll from "../../UI/AutoScroll";
 
 export default function Categories() {
   return (
     <section className="py-20 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+      <AutoScroll/>
       <div className="max-w-7xl mx-auto px-6 text-center">
         {/* Section Header */}
         <div className="text-center mb-14">
@@ -37,7 +41,9 @@ export default function Categories() {
 
         {/* CTA Buttons */}
         <div className="flex  justify-center items-center gap-4 mt-8">
+          <Link to="/#HowItWorks">
           <Button text="Explore Paths" />
+          </Link>
           <Button text="Get Guidance" variant="outline" />
         </div>
 

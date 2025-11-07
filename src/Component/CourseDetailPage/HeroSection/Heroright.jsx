@@ -2,26 +2,26 @@ import React from "react";
 import { courseData } from "../../../../Data/Courses.Array";
 import Button from "../../UI/Button";
 import { FaShieldAlt, FaBolt, FaLock, FaCreditCard } from "react-icons/fa";
-import { useAuth } from "../../Auth/AuthLogic"; // ✅ make sure path is correct
-import { useNavigate } from "react-router-dom";
+// import { useAuth } from "../../Auth/AuthLogic";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Heroright() {
-  const { user } = useAuth();
+  // const { user } = useAuth();
   const navigate = useNavigate();
 
   const handleEnroll = () => {
     if (!user) {
-      alert("Please login to enroll in the course.");
-      navigate("/login");
+      alert("Plloginease login to enroll in the course.");
+      navigate("/");    
       return;
     }
 
     if (courseData.price === 0) {
       alert("Successfully enrolled in free course!");
-      navigate(`/course/${courseData.id || 1}/content`); // ✅ redirect to course content
+      navigate(`/course/${courseData.id || 1}/content`); //  redirect to course content
     } else {
       alert("Redirecting to payment...");
-      navigate(`/Enroll/${courseData.id || 1}`); // ✅ redirect to payment page
+      navigate(`/Enroll/${courseData.id || 1}`); //  redirect to payment page
     }
   };
 
@@ -79,6 +79,7 @@ export default function Heroright() {
 
           {/* Enrollment CTA */}
           <div className="space-y-4">
+            <Link to="/enroll/:id">
             <Button
               onClick={handleEnroll}
               text={
@@ -89,6 +90,7 @@ export default function Heroright() {
               variant="squarefull"
               size="lg"
             />
+            </Link>
 
             <div className="text-center space-y-3">
               <p className="text-gray-500 text-sm font-medium">

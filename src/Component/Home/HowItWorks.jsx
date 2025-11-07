@@ -3,10 +3,11 @@ import React from "react";
 import { steps } from "../../../Data/Array";
 import SectionHeader from "../UI/SectionHeader";
 import Button from "../UI/Button";
+import { Link } from "react-router-dom";
 
 export default function HowItWorks() {
   return (
-    <section className="py-20 bg-gradient-to-br from-[#f9fbff] to-[#eef4ff]">
+    <section id="HowItWorks" className="py-20 bg-gradient-to-br from-[#f9fbff] to-[#eef4ff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <SectionHeader
@@ -73,7 +74,11 @@ export default function HowItWorks() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-16 place-items-center">
-          <Button text="Get Started Now" />
+          <Link to="/login" >
+          <div className="place-items-center">
+            <Button text="Get Started Now" />
+          </div>
+          </Link>
           <p className="text-gray-500 text-sm mt-4">
             No credit card required • Start learning in minutes
           </p>

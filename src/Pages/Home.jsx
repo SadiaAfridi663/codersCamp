@@ -13,6 +13,10 @@ import CompanyCollaboration from '../Component/Home/CompanyCollaboration'
 
 
 export default function Home() {
+  // console.log(localStorage.clear())
+  const user = localStorage.getItem("users")
+  console.log(user);
+
   return (
     <div>
       < HomeHero

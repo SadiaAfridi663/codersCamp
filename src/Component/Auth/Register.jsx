@@ -1,97 +1,100 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import AuthLayout from "./AuthLayout";
-import { useAuth } from "./AuthLogic";
+// import { useAuth } from "./AuthLogic";
+import { useNavigate, Link } from "react-router-dom";
+import Button from "../UI/Button";
 
 export default function Register() {
+  // const { register } = useAuth();
   const navigate = useNavigate();
-  const { register } = useAuth();
-  const [form, setForm] = useState({ name: "", email: "", password: "" });
-  const [error, setError] = useState("");
 
-  const validateForm = () => {
-    if (!form.name || !form.email || !form.password) {
-      setError("All fields are required!");
-      return false;
-    }
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+  const [loading, setLoading] = useState(false);
 
-    // Password must include upper, lower, number and 8 chars
-    const strongPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
-    if (!strongPassword.test(form.password)) {
-      setError(
-        "Password must be at least 8 characters long and include uppercase, lowercase, and a number."
-      );
-      return false;
-    }
-
-    setError("");
-    return true;
-  };
+  const handleChange = (e) =>
+    setForm({ ...form, [e.target.name]: e.target.value });
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!validateForm()) return;
+    setLoading(true);
 
-    try {
-      register(form.email, form.password, form.name);
-      alert("Registration successful! Please login now.");
+    const success = register({
+      name: form.name.trim(),
+      email: form.email.trim(),
+      password: form.password,
+      confirmPassword: form.confirmPassword,
+    });
+
+    setLoading(false);
+    if (success) {
+      alert("Account created successfully!");
       navigate("/login");
-    } catch (err) {
-      setError(err.message);
     }
   };
 
   return (
     <AuthLayout
-      title="Create your Account"
-      subtitle="Join BitCoderLabs and start learning today."
+      title="Create account"
+      subtitle="Sign up to get access to the platform"
     >
-      <form className="space-y-4" onSubmit={handleSubmit}>
-        {error && (
-          <p className="bg-red-100 text-red-600 px-4 py-2 rounded-md text-sm">
-            {error}
-          </p>
-        )}
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          name="name"
+          value={form.name}
+          onChange={handleChange}
+          type="text"
+          placeholder="Full name"
+          className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          required
+        />
+        <input
+          name="email"
+          value={form.email}
+          onChange={handleChange}
+          type="email"
+          placeholder="Email address"
+          className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          required
+        />
+        <input
+          name="password"
+          value={form.password}
+          onChange={handleChange}
+          type="password"
+          placeholder="Password (min 6 chars)"
+          className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          required
+        />
+        <input
+          name="confirmPassword"
+          value={form.confirmPassword}
+          onChange={handleChange}
+          type="password"
+          placeholder="Confirm password"
+          className="w-full border p-3 rounded-lg focus:ring-2 focus:ring-primary outline-none"
+          required
+        />
 
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">Full Name</label>
-          <input
-            type="text"
-            placeholder="John Doe"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-primary"
-          />
-        </div>
-
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">Email</label>
-          <input
-            type="email"
-            placeholder="you@example.com"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-primary"
-          />
-        </div>
-
-        <div>
-          <label className="block text-gray-700 font-medium mb-1">Password</label>
-          <input
-            type="password"
-            placeholder="••••••••"
-            value={form.password}
-            onChange={(e) => setForm({ ...form, password: e.target.value })}
-            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:border-primary"
-          />
-        </div>
-
-        <button
+        <Button
           type="submit"
-          className="w-full bg-primary text-white font-semibold py-2 rounded-lg hover:bg-primary-dark transition"
-        >
-          Sign Up
-        </button>
+          text={loading ? "Creating..." : "Create account"}
+          className="w-full bg-primary text-white"
+        />
+
+        <p className="text-center text-sm text-gray-500">
+          Already have an account?{" "}
+          <Link
+            to="/login"
+            className="text-primary-dark font-medium hover:underline"
+          >
+            Login
+          </Link>
+        </p>
       </form>
     </AuthLayout>
   );

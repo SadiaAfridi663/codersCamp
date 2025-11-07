@@ -1,6 +1,7 @@
 import React from "react";
 import { Right, recommendations } from "../../../Data/Array";
 import { div } from "framer-motion/client";
+import {Link} from "react-router-dom"
 
 export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
   return (
@@ -61,9 +62,13 @@ export default function HeroRight({ Righttitle, secondtital, thirdtitle }) {
           ))}
         </div>
         
-        <button className="w-full mt-3 bg-white text-primary py-2 rounded-md font-semibold text-sm hover:bg-gray-100 transition">
+
+        
+        <Link to="/courses">
+        <button className="w-full mt-3 cursor-pointer bg-white text-primary py-2 rounded-md font-semibold text-sm hover:bg-gray-100 transition">
           View All Courses
         </button>
+        </Link>
       </div>
     </div>
   );

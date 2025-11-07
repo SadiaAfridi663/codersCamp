@@ -1,15 +1,20 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+// import { useEffect } from "react";
+// import { useLocation } from "react-router-dom";
 import { Clock } from 'lucide-react';
 import { HowWeWorkLeft } from './HowWeWorkLeft';
 import { HowWeWorkRight } from './HowWeWorkRight';
 import { processSteps } from '../../../Data/AboutArray';
-
+import AutoScroll from '../UI/AutoScroll';
 export const HowWeWork = () => {
   const [activeVideo, setActiveVideo] = useState(0);
 
+   
+
   return (
-    <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section  className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <AutoScroll/>
+      <div id="FreeDemo" className="container mx-auto px-4 md:px-8">
         {/* Section Header */}
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary text-sm font-medium mb-6">

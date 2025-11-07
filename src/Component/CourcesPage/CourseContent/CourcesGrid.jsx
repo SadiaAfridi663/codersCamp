@@ -19,7 +19,7 @@ export default function CourseGrid() {
             <FaGraduationCap className="text-primary text-4xl" />
             Available Courses
           </h2>
-
+    
           <div className="flex items-center gap-3">
             {/* Filter Button */}
             <Button

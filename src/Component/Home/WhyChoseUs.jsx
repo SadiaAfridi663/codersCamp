@@ -6,6 +6,7 @@ import {features} from "../../../Data/Array"
 import Button from "../UI/Button";
 import SectionHeader from "../UI/SectionHeader";
 import image from "../../../images/whychoseUs.avif"
+import { Link } from "react-router-dom";
 
 
 export default function WhyChooseUs() {  
@@ -119,12 +120,20 @@ export default function WhyChooseUs() {
         {/* Bottom CTA */}
         <div className="text-center lg:mt-16 mt-8">
           <div className=" hidden sm:inline-flex items-center gap-8">
+            <Link to="/about#FreeDemo" >
             <Button text=" Start Free Trial " size="lg" />
-            <Button text="Schedule Demo" variant="outline" size="lg" />
+            </Link>
+            <Link to="prices">
+            <Button text="Subscribe Now" variant="outline" size="lg" />
+             </Link>
           </div>
           <div className="sm:hidden inline-flex items-center gap-4">
+            <Link to="/about#FreeDemo" >
             <Button text=" Start Free Trial " size="md" />
-            <Button text="Schedule Demo" variant="outline" size="md" />
+            </Link>
+            <Link to="prices">
+            <Button text="Subscribe Now" variant="outline" size="md" />
+            </Link>
           </div>
 
         </div>

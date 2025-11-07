@@ -13,34 +13,45 @@ import Register from "./Component/Auth/Register";
 import Enroll from "./Pages/Enroll";
 import Blog from "./Pages/Blog";
 import ScrollToTop from "./Component/ScrollToTop";
+import ForgotPassword from "./Component/Auth/ForgotPassword";
+import ResetPassword from "./Component/Auth/ResetPassword";
+import BlogDetail from "./Pages/BlogDetail";
 
 function Layout() {
-  const location = useLocation();
-  const hideNavFooter =
-    location.pathname === "/login" || location.pathname === "/register";
+const location = useLocation();
 
-  return (
-    <>
-      <ScrollToTop />
-      {!hideNavFooter && <Navbar />}
+// Hide Navbar and Footer on specific pages
+const hideNavFooter = ["/login", "/register", "/forgotpassword", "/resetpassword"].includes(location.pathname);
 
-      {/* Wrap all your routes inside <Routes> */}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/courses" element={<Courses />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/blog" element={<Blog />} />
-        <Route path="/prices" element={<Prices />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/course/:id" element={<CourseDetailPage />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/enroll/:id" element={<Enroll />} />
-      </Routes>
+return (
+<> <ScrollToTop />
 
-      {!hideNavFooter && <Footer />}
-    </>
-  );
+  {/* Navbar visible only when not on hidden pages */}
+  {!hideNavFooter && <Navbar />}
+
+  {/* All application routes */}
+  <Routes>
+    <Route path="/" element={<Home />} />
+    <Route path="/courses" element={<Courses />} />
+    <Route path="/about" element={<About />} />
+    <Route path="/blog" element={<Blog />} />
+    <Route path="/blog/:id" element={<BlogDetail />} />
+    <Route path="/prices" element={<Prices />} />
+    <Route path="/contact" element={<Contact />} />
+    <Route path="/course/:id" element={<CourseDetailPage />} />
+    <Route path="/enroll/:id" element={<Enroll />} />
+    <Route path="/login" element={<Login />} />
+    <Route path="/forgotpassword" element={<ForgotPassword />} />
+    <Route path="/resetpassword" element={<ResetPassword />} />
+    <Route path="/register" element={<Register />} />
+  </Routes>
+
+  {/* Footer visible only when not on hidden pages */}
+  {!hideNavFooter && <Footer />}
+</>
+
+
+);
 }
 
 export default Layout;

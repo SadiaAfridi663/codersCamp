@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from "react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { Play, ArrowRight, Menu, X } from "lucide-react";
 import Button from "../UI/Button";
-import { useAuth } from "../Auth/AuthLogic";
 
 const Navbar = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -10,13 +9,6 @@ const Navbar = () => {
   const [activeCourse, setActiveCourse] = useState(null);
   const coursesDropdownRef = useRef(null);
   const location = useLocation();
-
-  const { user, logout } = useAuth();
-
-  const handleLogout = () => {
-    logout();
-    setMobileMenuOpen(false);
-  };
 
   const courseToSubcourses = {
     "html-basics": "html-basics-subcourses",
@@ -116,14 +108,12 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
-  // Mobile Courses Dropdown Component
   const MobileCoursesDropdown = () => {
     const [mobileActiveLevel, setMobileActiveLevel] = useState("beginner");
     const [mobileActiveCourse, setMobileActiveCourse] = useState(null);
 
     return (
       <div className="space-y-4">
-        {/* Level Selection */}
         <div>
           <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
             Course Levels
@@ -148,7 +138,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Courses List */}
         <div>
           <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
             Courses
@@ -174,7 +163,6 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Subcourses List */}
         {mobileActiveCourse && (
           <div>
             <h3 className="font-semibold text-gray-900 mb-3 text-sm uppercase tracking-wide">
@@ -205,19 +193,19 @@ const Navbar = () => {
 
   return (
     <div className="w-full bg-white shadow-lg border-b border-gray-100 sticky top-0 z-50">
+      {" "}
       <header className="max-w-7xl mx-auto flex justify-between items-center lg:px-8 px-4 lg:py-2 py-3 bg-white relative z-50">
-        {/* Logo */}
+        {" "}
         <div className="flex items-center">
+          {" "}
           <NavLink
             to="/"
             className="text-2xl font-bold text-gray-900 hover:no-underline tracking-tight"
             onClick={handleNavLinkClick}
           >
-            Bit<span className="text-primary-dark">CoderLabs</span>
-          </NavLink>
+            Bit<span className="text-primary-dark">CoderLabs</span>{" "}
+          </NavLink>{" "}
         </div>
-
-        {/* Desktop Navigation - Unchanged */}
         <nav className="hidden lg:flex items-center space-x-1">
           <div className="group relative px-3 py-2">
             <NavLink
@@ -241,7 +229,6 @@ const Navbar = () => {
             </NavLink>
           </div>
 
-          {/* Courses Dropdown */}
           <div
             className="courses-dropdown group relative px-3 py-2"
             ref={coursesDropdownRef}
@@ -272,10 +259,9 @@ const Navbar = () => {
               </svg>
             </NavLink>
 
-            {/* Dropdown */}
             <div className="absolute left-1/2 transform -translate-x-1/2 top-full mt-1 bg-white rounded-xl shadow-2xl border border-gray-200 z-50 w-[800px] opacity-0 invisible -translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0">
+              {/* Level / Course / Subcourse columns */}
               <div className="flex h-[400px]">
-                {/* Level Column */}
                 <div className="w-1/4 bg-white p-6 border-r border-gray-200 overflow-y-auto rounded-l-xl">
                   <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide">
                     Course Levels
@@ -301,7 +287,6 @@ const Navbar = () => {
                   </ul>
                 </div>
 
-                {/* Course Column */}
                 <div className="w-2/5 p-6 border-r border-gray-200 overflow-y-auto">
                   <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide">
                     Courses
@@ -323,7 +308,6 @@ const Navbar = () => {
                   </div>
                 </div>
 
-                {/* Subcourse Column */}
                 <div className="w-2/5 p-6 overflow-y-auto rounded-r-xl">
                   <h3 className="font-semibold text-gray-900 mb-4 text-sm uppercase tracking-wide">
                     Lessons
@@ -356,7 +340,6 @@ const Navbar = () => {
             </div>
           </div>
 
-          {/* Other Links */}
           {["about", "Blog", "prices", "contact"].map((item) => (
             <div key={item} className="group relative px-3 py-2">
               <NavLink
@@ -381,42 +364,15 @@ const Navbar = () => {
             </div>
           ))}
         </nav>
-
-        {/* Desktop Auth Buttons - Unchanged */}
+        {/* Desktop Auth Buttons (static) */}
         <div className="hidden lg:flex items-center gap-3">
-          {!user ? (
-            <>
-              <Link to="/register">
-                <Button text="Sign In" variant="outline" size="sm" />
-              </Link>
-              <Link to="/login">
-                <Button text="Log In" size="sm" />
-              </Link>
-            </>
-          ) : (
-            <div className="flex items-center gap-3">
-              <span className="medium text-gray-800 whitespace-nowrap text-primary">
-                Hi,&nbsp;{user.name || "User"}
-              </span>
-              <Button
-                text="Logout"
-                variant="squarefull"
-                size="sm"
-                onClick={handleLogout}
-              />
-            </div>
-          )}
+          <Link to="/register">
+            <Button text="Sign In" variant="outline" size="sm" />
+          </Link>
+          <Link to="/login">
+            <Button text="Log In" size="sm" />
+          </Link>
         </div>
-
-        {/* Mobile: Show user name when logged in */}
-        {user && (
-          <div className="lg:hidden flex items-center">
-            <span className="font-medium text-gray-800 text-sm mr-3">
-               Hi, {user.name || "User"}
-            </span>
-          </div>
-        )}
-
         {/* Mobile Menu Button */}
         <div className="lg:hidden">
           <button
@@ -432,17 +388,15 @@ const Navbar = () => {
           </button>
         </div>
       </header>
-
       {/* Mobile Menu */}
       <div
         id="mobile-menu"
         className={`lg:hidden fixed top-0 left-0 right-0 bg-white shadow-xl z-40 transition-transform duration-300 ease-in-out ${
           mobileMenuOpen ? "translate-y-0" : "-translate-y-full"
         }`}
-        style={{ marginTop: "64px" }} // Adjust based on your header height
+        style={{ marginTop: "64px" }}
       >
         <div className="max-w-7xl mx-auto px-4 py-6">
-          {/* Mobile Navigation Links */}
           <nav className="space-y-4 mb-6">
             <NavLink
               to="/"
@@ -458,7 +412,6 @@ const Navbar = () => {
               Home
             </NavLink>
 
-            {/* Mobile Courses Dropdown */}
             <div className="py-3 px-4 rounded-lg border border-gray-200">
               <MobileCoursesDropdown />
             </div>
@@ -481,46 +434,24 @@ const Navbar = () => {
             ))}
           </nav>
 
-          {/* Mobile Auth Buttons */}
           <div className="space-y-3 pt-4 border-t border-gray-200">
-            {!user ? (
-              <>
-                <Link
-                  to="/register"
-                  className="block"
-                  onClick={handleNavLinkClick}
-                >
-                  <Button
-                    text="Sign In"
-                    variant="squarefull"
-                    className="w-full justify-center"
-                  />
-                </Link>
-                <Link
-                  to="/login"
-                  className="block"
-                  onClick={handleNavLinkClick}
-                >
-                  <Button
-                    text="Log In"
-                    variant="squarefull"
-                    className="w-full justify-center"
-                  />
-                </Link>
-              </>
-            ) : (
+            <Link to="/register" className="block" onClick={handleNavLinkClick}>
               <Button
-                text="Logout"
+                text="Sign In"
                 variant="squarefull"
-                onClick={handleLogout}
                 className="w-full justify-center"
               />
-            )}
+            </Link>
+            <Link to="/login" className="block" onClick={handleNavLinkClick}>
+              <Button
+                text="Log In"
+                variant="squarefull"
+                className="w-full justify-center"
+              />
+            </Link>
           </div>
         </div>
       </div>
-
-      {/* Overlay */}
       {mobileMenuOpen && (
         <div
           className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 transition-opacity duration-300 lg:hidden"

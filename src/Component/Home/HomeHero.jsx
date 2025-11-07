@@ -43,7 +43,7 @@ const HeroSection = ({ title, SubTitle }) => {
               className="w-full sm:w-auto"
             />
           </Link>
-          <Link to="/signup" className="w-full sm:w-auto">
+          <Link to="/about#FreeDemo" className="w-full sm:w-auto">
             <Button
               text="Free Demo"
               variant="outline"
