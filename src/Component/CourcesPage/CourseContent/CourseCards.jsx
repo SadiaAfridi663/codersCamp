@@ -4,11 +4,9 @@ import {
   FaStar,
   FaClock,
   FaUser,
-  FaPlayCircle,
   FaBook,
   FaHeart,
   FaShare,
-  FaShoppingCart,
   FaEye,
 } from "react-icons/fa";
 import { FiUsers, FiBarChart2, FiBookOpen } from "react-icons/fi";
